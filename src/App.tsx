@@ -15,6 +15,13 @@ const schema: JSONSchema6 = {
 };
 
 
+const uiSchema =  {
+  done: {
+    "ui:widget": "radio" // could also be "select"
+  }
+};
+
+
 interface IFormData {
   done?: boolean;
   title: string
@@ -35,6 +42,7 @@ class App extends React.Component {
     return (
       <Form 
         schema={schema}
+        uiSchema={uiSchema}
         formData={formData}
         onChange={log("changed")}
         onSubmit={onSubmit}
