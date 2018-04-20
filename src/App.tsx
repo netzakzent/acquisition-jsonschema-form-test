@@ -1,4 +1,5 @@
 // tslint:disable:no-console
+// tslint:disable:object-literal-sort-keys
 import { JSONSchema6 } from 'json-schema';
 import * as React from 'react';
 import Form from "react-jsonschema-form";
@@ -8,10 +9,16 @@ const schema: JSONSchema6 = {
   properties: {
     done: { type: "boolean", title: "Done?", default: 'false', enumNames: ['ja', 'nein'] },
     title: { type: "string", title: "Title", default: "A new task" },
-    // tslint:disable-next-line:object-literal-sort-keys
-    email: { type: "string", format: "email"},
+    email: { type: "string", format: "email" },
     foo: { type: "boolean" },
-    date: { type: "string", format: "date"}
+    date: { type: "string", format: "date" },
+    items: {
+      type: "array",
+      
+      items: {
+        type: "string"
+      }
+    }
   },
   required: ["title"],
   title: "Todo",
@@ -19,7 +26,7 @@ const schema: JSONSchema6 = {
 };
 
 
-const uiSchema =  {
+const uiSchema = {
   date: {
     "ui:disabled": true
   },
@@ -31,6 +38,12 @@ const uiSchema =  {
   },
   foo: {
     "ui:widget": "hidden"
+  },
+  items: {
+    "ui:options":  {
+      addable: true,
+      removable: true
+    }
   },
 
   "ui:order": ["title", "done", "*"],
@@ -46,7 +59,7 @@ interface IFormData {
 const formData: IFormData = {
   done: true,
   email: "walter.leinert@aracom.de",
-  title: "First task"  
+  title: "First task"
 };
 
 
@@ -57,7 +70,7 @@ const onError = (errors: any[]) => console.log("I have", errors.length, "errors 
 class App extends React.Component {
   public render() {
     return (
-      <Form 
+      <Form
         schema={schema}
         uiSchema={uiSchema}
         formData={formData}
