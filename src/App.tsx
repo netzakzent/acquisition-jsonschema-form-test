@@ -5,6 +5,14 @@ import * as React from 'react';
 import Form from "react-jsonschema-form";
 import './App.css';
 
+enum Color { RED, GREEN, BLUE }; 
+
+const numbersSchema = {
+  type: "number",
+  enum: [ Color.RED, Color.GREEN, Color.BLUE],
+  enumNames: ["Rot", "Grün", "Blau"]
+};
+
 const schema: JSONSchema6 = {
   properties: {
     done: { type: "boolean", title: "Done?", default: 'false', enumNames: ['ja', 'nein'] },
@@ -12,6 +20,7 @@ const schema: JSONSchema6 = {
     email: { type: "string", format: "email" },
     foo: { type: "boolean" },
     date: { type: "string", format: "date" },
+    numbers: numbersSchema,
     items: {
       type: "array",
       
@@ -44,6 +53,10 @@ const uiSchema = {
       addable: true,
       removable: true
     }
+  },
+
+  title: {
+    classNames: "task-title foo-bar"
   },
 
   "ui:order": ["title", "done", "*"],
