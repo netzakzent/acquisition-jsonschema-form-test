@@ -31,7 +31,9 @@ const uiSchema =  {
   },
   foo: {
     "ui:widget": "hidden"
-  }
+  },
+
+  "ui:order": ["title", "done", "*"],
 };
 
 
