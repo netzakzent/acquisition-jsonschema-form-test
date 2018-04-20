@@ -10,6 +10,7 @@ const schema: JSONSchema6 = {
     title: { type: "string", title: "Title", default: "A new task" },
     // tslint:disable-next-line:object-literal-sort-keys
     email: { type: "string", format: "email"},
+    foo: { type: "boolean" },
     date: { type: "string", format: "date"}
   },
   required: ["title"],
@@ -19,20 +20,31 @@ const schema: JSONSchema6 = {
 
 
 const uiSchema =  {
+  date: {
+    "ui:disabled": true
+  },
   done: {
     "ui:widget": "radio" // could also be "select"
+  },
+  email: {
+    "ui:readonly": true
+  },
+  foo: {
+    "ui:widget": "hidden"
   }
 };
 
 
 interface IFormData {
   done?: boolean;
-  title: string
+  title: string,
+  email: string
 }
 
 const formData: IFormData = {
   done: true,
-  title: "First task",
+  email: "walter.leinert@aracom.de",
+  title: "First task"  
 };
 
 
