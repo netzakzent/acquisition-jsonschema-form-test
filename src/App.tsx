@@ -5,25 +5,43 @@ import * as React from 'react';
 import Form from "react-jsonschema-form";
 import './App.css';
 
-enum Color { RED, GREEN, BLUE }; 
+enum Color { RED, GREEN, BLUE };
 
-const numbersSchema = {
+const schemaNumbers = {
   type: "number",
-  enum: [ Color.RED, Color.GREEN, Color.BLUE],
+  enum: [Color.RED, Color.GREEN, Color.BLUE],
   enumNames: ["Rot", "Grün", "Blau"]
+};
+
+const schemaMultipleChoices = {
+  type: "array",
+  title: "A multiple choices list",
+  items: {
+    type: "string",
+    enum: ["foo", "bar", "fuzz", "qux"],
+  },
+  uniqueItems: true
+};
+
+const uiSchemaMultipleChoices = {
+  "ui:widget": "checkboxes"
 };
 
 const schema: JSONSchema6 = {
   properties: {
-    done: { type: "boolean", title: "Done?", default: 'false', enumNames: ['ja', 'nein'] },
+    done: {
+      type: "boolean", title: "Done?", default: 'false',
+      enumNames: ['ja', 'nein']
+    },
     title: { type: "string", title: "Title", default: "A new task" },
     email: { type: "string", format: "email" },
     foo: { type: "boolean" },
     date: { type: "string", format: "date" },
-    numbers: numbersSchema,
+    numbers: schemaNumbers,
+    multipleChoices: schemaMultipleChoices,
     items: {
       type: "array",
-      
+
       items: {
         type: "string"
       }
@@ -49,11 +67,13 @@ const uiSchema = {
     "ui:widget": "hidden"
   },
   items: {
-    "ui:options":  {
+    "ui:options": {
       addable: true,
       removable: true
     }
   },
+
+  multipleChoices: uiSchemaMultipleChoices,
 
   title: {
     classNames: "task-title foo-bar"
