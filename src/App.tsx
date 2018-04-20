@@ -1,5 +1,8 @@
 // tslint:disable:no-console
 // tslint:disable:object-literal-sort-keys
+// tslint:disable:max-classes-per-file
+
+
 import { JSONSchema6 } from 'json-schema';
 import * as React from 'react';
 import Form from "react-jsonschema-form";
@@ -7,25 +10,32 @@ import './App.css';
 
 enum Color { RED, GREEN, BLUE };
 
-const schemaNumbers = {
-  type: "number",
-  enum: [Color.RED, Color.GREEN, Color.BLUE],
-  enumNames: ["Rot", "Grün", "Blau"]
-};
+class Numbers {
+  public static readonly SCHEMA = {
+    type: "number",
+    enum: [Color.RED, Color.GREEN, Color.BLUE],
+    enumNames: ["Rot", "Grün", "Blau"]
+  };
+}
 
-const schemaMultipleChoices = {
-  type: "array",
-  title: "A multiple choices list",
-  items: {
-    type: "string",
-    enum: ["foo", "bar", "fuzz", "qux"],
-  },
-  uniqueItems: true
-};
+class MultipleChoices {
+  public static readonly SCHEMA = {
+    type: "array",
+    title: "A multiple choices list",
+    items: {
+      type: "string",
+      enum: ["foo", "bar", "fuzz", "qux"],
+    },
+    uniqueItems: true
+  };
 
-const uiSchemaMultipleChoices = {
-  "ui:widget": "checkboxes"
-};
+  public static readonly UI_SCHEMA = {
+    "ui:widget": "checkboxes",
+    "ui:options": {
+      inline: true
+    }
+  };
+}
 
 const schema: JSONSchema6 = {
   properties: {
@@ -37,8 +47,8 @@ const schema: JSONSchema6 = {
     email: { type: "string", format: "email" },
     foo: { type: "boolean" },
     date: { type: "string", format: "date" },
-    numbers: schemaNumbers,
-    multipleChoices: schemaMultipleChoices,
+    numbers: Numbers.SCHEMA,
+    multipleChoices: MultipleChoices.SCHEMA,
     items: {
       type: "array",
 
@@ -73,9 +83,10 @@ const uiSchema = {
     }
   },
 
-  multipleChoices: uiSchemaMultipleChoices,
+  multipleChoices: MultipleChoices.UI_SCHEMA,
 
   title: {
+    "ui:autofocus": true,
     classNames: "task-title foo-bar"
   },
 
