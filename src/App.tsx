@@ -6,8 +6,11 @@ import './App.css';
 
 const schema: JSONSchema6 = {
   properties: {
-    done: { type: "boolean", title: "Done?", default: false },
+    done: { type: "boolean", title: "Done?", default: 'false', enumNames: ['ja', 'nein'] },
     title: { type: "string", title: "Title", default: "A new task" },
+    // tslint:disable-next-line:object-literal-sort-keys
+    email: { type: "string", format: "email"},
+    date: { type: "string", format: "date"}
   },
   required: ["title"],
   title: "Todo",
