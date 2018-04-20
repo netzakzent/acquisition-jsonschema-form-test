@@ -1,3 +1,4 @@
+// tslint:disable:no-console
 import { JSONSchema6 } from 'json-schema';
 import * as React from 'react';
 import Form from "react-jsonschema-form";
@@ -14,13 +15,20 @@ const schema: JSONSchema6 = {
 };
 
 
-const formData = {
+interface IFormData {
+  done?: boolean;
+  title: string
+}
+
+const formData: IFormData = {
   done: true,
   title: "First task",
 };
 
 
-const log = (type: any) => console.log.bind(console, type);
+const log = (type: string) => console.log.bind(console, type);
+const onSubmit = (e: IFormData) => console.log("Data submitted: ", e);
+const onError = (errors: any[]) => console.log("I have", errors.length, "errors to fix");
 
 class App extends React.Component {
   public render() {
@@ -29,8 +37,8 @@ class App extends React.Component {
         schema={schema}
         formData={formData}
         onChange={log("changed")}
-        onSubmit={log("submitted")}
-        onError={log("errors")} />
+        onSubmit={onSubmit}
+        onError={onError} />
     );
   }
 }
