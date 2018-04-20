@@ -1,20 +1,27 @@
+import { JSONSchema6 } from 'json-schema';
 import * as React from 'react';
+import Form from "react-jsonschema-form";
 import './App.css';
 
-import logo from './logo.svg';
+const schema: JSONSchema6 = {  
+  properties: {
+    done: {type: "boolean", title: "Done?", default: false},
+    title: {type: "string", title: "Title", default: "A new task"},
+  },
+  required: ["title"],
+  title: "Todo",
+  type: "object",
+};
+
+const log = (type: any) => console.log.bind(console, type);
 
 class App extends React.Component {
   public render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
-      </div>
+      <Form schema={schema}
+      onChange={log("changed")}
+      onSubmit={log("submitted")}
+      onError={log("errors")} />
     );
   }
 }
