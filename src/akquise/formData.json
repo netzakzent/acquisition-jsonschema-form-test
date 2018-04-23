@@ -52,12 +52,12 @@
                     "properties": {
                         "street": {
                             "enum": [
-                                ""
+                                "Waldstraße"
                             ]
                         },
                         "zipCode": {
                             "enum": [
-                                ""
+                                "82205"
                             ]
                         },
                         "city": {

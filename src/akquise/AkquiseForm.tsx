@@ -7,6 +7,17 @@ import * as React from 'react';
 import Form from "react-jsonschema-form";
 import * as schema from './formData.json';
 
+
+const uiSchema = {
+  customer: {
+    clientId: {
+      "ui:widget": "text",
+      "ui:readonly": false
+    },
+  },
+};
+
+
 const log = (type: string) => console.log.bind(console, type);
 const onSubmit = (e: any) => console.log("Data submitted: ", e);
 const onCancel = (e: React.SyntheticEvent<HTMLButtonElement>) => console.log("Form cancelled: ");
@@ -17,6 +28,7 @@ export default class AkquiseForm extends React.Component {
     return (
       <Form
         schema={schema}
+        uiSchema={uiSchema}
         onChange={log("changed")}
         onSubmit={onSubmit}
         onError={onError} >
