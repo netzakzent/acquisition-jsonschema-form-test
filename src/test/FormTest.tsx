@@ -7,15 +7,46 @@ import { JSONSchema6 } from 'json-schema';
 import * as React from 'react';
 import Form from "react-jsonschema-form";
 
-// enum Color { RED, GREEN, BLUE };
+enum Color { RED, GREEN, BLUE };
 
-// class Numbers {
-//   public static readonly SCHEMA = {
+// class Colors {
+//   public static readonly SCHEMA: JSONSchema6 = {
 //     type: "number",
-//     enum: Color,
-//     // enumNames: ["Rot", "Grün", "Blau"]
+//     enum: [Color.RED, Color.GREEN, Color.BLUE],
+//     enumNames: ["Rot", "Grün", "Blau"]
 //   };
 // }
+
+class ColorsAnyOf {
+  public static readonly SCHEMA: JSONSchema6 = {
+    title: "Farben",
+    type: "number",
+    default: Color.GREEN,
+    anyOf: [
+      {
+        type: "number",
+        title: "Rot",
+        enum: [
+          Color.RED
+        ]
+      },
+      {
+        type: "number",
+        title: "Grün",
+        enum: [
+          Color.GREEN
+        ]
+      },
+      {
+        type: "number",
+        title: "Blau",
+        enum: [
+          Color.BLUE
+        ]
+      }
+    ]
+  };
+}
 
 // class MultipleChoices {
 //   public static readonly SCHEMA = {
@@ -46,7 +77,7 @@ const schema: JSONSchema6 = {
     email: { type: "string", format: "email" },
     foo: { type: "boolean" },
     date: { type: "string", format: "date" },
-    // numbers: Numbers.SCHEMA,
+    colors: ColorsAnyOf.SCHEMA,
     // multipleChoices: MultipleChoices.SCHEMA,
     items: {
       type: "array",
