@@ -12,7 +12,7 @@ const onSubmit = (e: any) => console.log("Data submitted: ", e);
 const onCancel = (e: React.SyntheticEvent<HTMLButtonElement>) => console.log("Form cancelled: ");
 const onError = (errors: any[]) => console.log("I have", errors.length, "errors to fix");
 
-export class AkquiseForm extends React.Component {
+export default class AkquiseForm extends React.Component {
   public render() {
     return (
       <Form
@@ -29,5 +29,3 @@ export class AkquiseForm extends React.Component {
     );
   }
 }
-
-export default AkquiseForm;

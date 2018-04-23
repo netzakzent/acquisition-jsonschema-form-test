@@ -112,7 +112,7 @@ const onSubmit = (e: IFormData) => console.log("Data submitted: ", e);
 const onCancel = (e: React.MouseEvent<HTMLButtonElement>) => console.log("Form cancelled: ");
 const onError = (errors: any[]) => console.log("I have", errors.length, "errors to fix");
 
-class FormTest extends React.Component {
+export default class FormTest extends React.Component {
   public render() {
     return (
       <Form
@@ -131,5 +131,3 @@ class FormTest extends React.Component {
     );
   }
 }
-
-export default FormTest;

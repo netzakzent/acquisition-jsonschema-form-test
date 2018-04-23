@@ -3,6 +3,7 @@ import './App.css';
 
 import { Jumbotron, PageHeader, Tab, Tabs } from 'react-bootstrap';
 
+import AkquiseForm from './akquise/AkquiseForm';
 import FormTest from './test/FormTest'
 
 class App extends React.Component {
@@ -26,8 +27,10 @@ class App extends React.Component {
               </div>
             </Tab>
 
-            <Tab eventKey={2} title="Tab 2">
-              Tab 2 content
+            <Tab eventKey={2} title="Akquise Form">
+            <div className="container" >
+                <AkquiseForm />
+              </div>
           </Tab>
 
             <Tab eventKey={3} title="Tab 3" disabled={true}>
