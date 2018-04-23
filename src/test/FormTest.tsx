@@ -6,7 +6,6 @@
 import { JSONSchema6 } from 'json-schema';
 import * as React from 'react';
 import Form from "react-jsonschema-form";
-import './App.css';
 
 // enum Color { RED, GREEN, BLUE };
 
