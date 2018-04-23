@@ -1,0 +1,2973 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Coop Negotiation",
+    "description": "Coop negotiation between SR and customer",
+    "type": "object",
+    "properties": {
+        "customer": {
+            "type": "object",
+            "properties": {
+                "clientId": {
+                    "enum": [
+                        "6"
+                    ]
+                },
+                "displayClientId": {
+                    "enum": [
+                        "6"
+                    ]
+                },
+                "pos": {
+                    "enum": [
+                        ""
+                    ]
+                },
+                "name": {
+                    "enum": [
+                        "TEST "
+                    ]
+                },
+                "segment": {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "enum": [
+                                "88"
+                            ]
+                        },
+                        "name": {
+                            "enum": [
+                                "comma casual identity"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "id",
+                        "name"
+                    ],
+                    "additionalProperties": false
+                },
+                "address": {
+                    "type": "object",
+                    "properties": {
+                        "street": {
+                            "enum": [
+                                ""
+                            ]
+                        },
+                        "zipCode": {
+                            "enum": [
+                                ""
+                            ]
+                        },
+                        "city": {
+                            "enum": [
+                                "TESTORT"
+                            ]
+                        },
+                        "deliveryDistrict": {
+                            "enum": [
+                                ""
+                            ]
+                        },
+                        "countryKey": {
+                            "enum": [
+                                "DE"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "street",
+                        "zipCode",
+                        "city",
+                        "countryKey"
+                    ],
+                    "additionalProperties": false
+                },
+                "countryKey": {
+                    "enum": [
+                        "DE"
+                    ]
+                },
+                "invoiceCustomerNumber": {
+                    "enum": [
+                        "6"
+                    ]
+                },
+                "debitorAccount": {
+                    "enum": [
+                        "36124"
+                    ]
+                },
+                "edi": {
+                    "enum": [
+                        false
+                    ]
+                },
+                "ars": {
+                    "enum": [
+                        false
+                    ]
+                },
+                "noos": {
+                    "enum": [
+                        false
+                    ]
+                },
+                "digitalEdiInvoice": {
+                    "enum": [
+                        false
+                    ]
+                },
+                "pdfInvoice": {
+                    "enum": [
+                        false
+                    ]
+                },
+                "pdfInvoiceEmail": {
+                    "enum": [
+                        ""
+                    ]
+                },
+                "shopfittingExists": {
+                    "enum": [
+                        false
+                    ]
+                },
+                "shopfittingConcept": {
+                    "enum": [
+                        ""
+                    ]
+                },
+                "shopfittingOpening": {
+                    "enum": [
+                        ""
+                    ]
+                },
+                "shopfittingAreaDimension": {
+                    "enum": [
+                        ""
+                    ]
+                },
+                "purchasingUnion": {
+                    "enum": [
+                        ""
+                    ]
+                },
+                "hasPurchasingUnion": {
+                    "enum": [
+                        false
+                    ]
+                },
+                "hasSepa": {
+                    "enum": [
+                        false
+                    ]
+                },
+                "email": {
+                    "enum": [
+                        ""
+                    ]
+                },
+                "coopType": {
+                    "enum": [
+                        "Multi-Label-Kunde"
+                    ]
+                },
+                "planedNewCoopType": {
+                    "enum": [
+                        " - "
+                    ]
+                },
+                "discount": {
+                    "enum": [
+                        "0.00%"
+                    ]
+                },
+                "paymentTerms": {
+                    "enum": [
+                        "11"
+                    ]
+                },
+                "ediServicePricat": {
+                    "enum": [
+                        false
+                    ]
+                },
+                "ediServiceDesadv": {
+                    "enum": [
+                        false
+                    ]
+                },
+                "ediServiceSlsrpt": {
+                    "enum": [
+                        null
+                    ]
+                },
+                "ediServiceInvrpt": {
+                    "enum": [
+                        null
+                    ]
+                },
+                "ediServiceOrdchg": {
+                    "enum": [
+                        null
+                    ]
+                },
+                "ediServiceOrdrsp": {
+                    "enum": [
+                        false
+                    ]
+                },
+                "parcelServiceDpdAvailable": {
+                    "enum": [
+                        true
+                    ]
+                },
+                "hasSapPos": {
+                    "enum": [
+                        false
+                    ]
+                },
+                "sap": {
+                    "type": "object",
+                    "properties": {
+                        "area": {
+                            "enum": [
+                                ""
+                            ]
+                        },
+                        "subDivision": {
+                            "enum": [
+                                ""
+                            ]
+                        },
+                        "consigneeId": {
+                            "enum": [
+                                ""
+                            ]
+                        },
+                        "contractingAuthorityId": {
+                            "enum": [
+                                ""
+                            ]
+                        },
+                        "contractingAuthorityName": {
+                            "enum": [
+                                ""
+                            ]
+                        },
+                        "displayContractingAuthority": {
+                            "enum": [
+                                ""
+                            ]
+                        }
+                    },
+                    "required": [
+                        "consigneeId",
+                        "area",
+                        "subDivision"
+                    ],
+                    "additionalProperties": false
+                }
+            },
+            "additionalProperties": false
+        },
+        "dialogPartner": {
+            "type": "object",
+            "properties": {
+                "salutation": {
+                    "enum": [
+                        "MS",
+                        "MR"
+                    ]
+                },
+                "firstName": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "lastName": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "phone": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "mobile": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "email": {
+                    "type": "string",
+                    "format": "email"
+                }
+            },
+            "required": [
+                "salutation",
+                "firstName",
+                "lastName"
+            ],
+            "anyOf": [
+                {
+                    "required": [
+                        "phone"
+                    ]
+                },
+                {
+                    "required": [
+                        "mobile"
+                    ]
+                }
+            ],
+            "additionalProperties": false
+        },
+        "authorizedRepresentative1": {
+            "type": "object",
+            "properties": {
+                "salutation": {
+                    "enum": [
+                        "MS",
+                        "MR"
+                    ]
+                },
+                "firstName": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "lastName": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "phone": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "mobile": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "email": {
+                    "type": "string",
+                    "format": "email"
+                }
+            },
+            "required": [
+                "salutation",
+                "firstName",
+                "lastName",
+                "mobile",
+                "email"
+            ],
+            "additionalProperties": false
+        },
+        "authorizedRepresentative2": {
+            "type": "object",
+            "properties": {
+                "salutation": {
+                    "enum": [
+                        "MS",
+                        "MR"
+                    ]
+                },
+                "firstName": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "lastName": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "phone": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "mobile": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "email": {
+                    "type": "string",
+                    "format": "email"
+                }
+            },
+            "required": [
+                "salutation",
+                "firstName",
+                "lastName",
+                "mobile",
+                "email"
+            ],
+            "additionalProperties": false
+        },
+        "sellingSpaceStaff": {
+            "type": "object",
+            "properties": {
+                "salutation": {
+                    "enum": [
+                        "MS",
+                        "MR"
+                    ]
+                },
+                "firstName": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "lastName": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "phone": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "mobile": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "email": {
+                    "type": "string",
+                    "format": "email"
+                }
+            },
+            "required": [
+                "salutation",
+                "firstName",
+                "lastName"
+            ],
+            "anyOf": [
+                {
+                    "required": [
+                        "phone"
+                    ]
+                },
+                {
+                    "required": [
+                        "mobile"
+                    ]
+                }
+            ],
+            "additionalProperties": false
+        },
+        "digitalCommunication": {
+            "type": "object",
+            "properties": {
+                "infoEmailAddresses": {
+                    "type": "object",
+                    "properties": {
+                        "pos0": {
+                            "type": "string",
+                            "format": "email"
+                        },
+                        "pos1": {
+                            "type": "string",
+                            "format": "email"
+                        },
+                        "pos2": {
+                            "type": "string",
+                            "format": "email"
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "cancelEmailAddresses": {
+                    "type": "object",
+                    "properties": {
+                        "pos0": {
+                            "type": "string",
+                            "format": "email"
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "amendmentEmailAddresses": {
+                    "type": "object",
+                    "properties": {
+                        "pos0": {
+                            "type": "string",
+                            "format": "email"
+                        }
+                    },
+                    "additionalProperties": false
+                }
+            },
+            "additionalProperties": false
+        },
+        "coop": {
+            "oneOf": [
+                {
+                    "type": "object",
+                    "title": "Multilabel-Partner",
+                    "properties": {
+                        "newType": {
+                            "enum": [
+                                "1"
+                            ]
+                        },
+                        "minimumRequirements": {
+                            "type": "object",
+                            "properties": {
+                                "matrixRange": {
+                                    "enum": [
+                                        0
+                                    ]
+                                },
+                                "annualMinimumOrderValue": {
+                                    "type": "number",
+                                    "minimum": 20000
+                                }
+                            },
+                            "required": [
+                                "annualMinimumOrderValue"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "coopDiscount": {
+                            "type": "string",
+                            "pattern": "^[\\d]+([\\.,]{1,1}[\\d]{1,2})?%$",
+                            "default": "0%"
+                        },
+                        "coopDiscountComment": {
+                            "type": "string"
+                        },
+                        "paymentTerms": {
+                            "type": "string",
+                            "minLength": 1,
+                            "default": "10 Tage 4% Skonto"
+                        },
+                        "paymentTermsComment": {
+                            "type": "string"
+                        },
+                        "posManagerOrderPermission": {
+                            "enum": [
+                                true,
+                                false
+                            ]
+                        },
+                        "contract": {
+                            "type": "object",
+                            "properties": {
+                                "inceptionOfTreaty": {
+                                    "type": "string",
+                                    "pattern": "^[0-9]((0[0-9])|(1[0-2]))$"
+                                }
+                            },
+                            "required": [
+                                "inceptionOfTreaty"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "contractAddons": {
+                            "type": "object",
+                            "properties": {
+                                "storeConstruction": {
+                                    "enum": [
+                                        false
+                                    ]
+                                },
+                                "contractDuration": {
+                                    "type": "string",
+                                    "pattern": "^(([\\d]+)|(-))$",
+                                    "default": "-"
+                                },
+                                "contractDurationComment": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "storeConstruction"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "edi": {
+                            "oneOf": [
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "ars": {
+                                            "enum": [
+                                                true
+                                            ]
+                                        },
+                                        "noos": {
+                                            "enum": [
+                                                false
+                                            ]
+                                        },
+                                        "ediServicePricat": {
+                                            "enum": [
+                                                true
+                                            ]
+                                        },
+                                        "ediServiceDesadv": {
+                                            "enum": [
+                                                true
+                                            ]
+                                        },
+                                        "ediServiceSlsrpt": {
+                                            "enum": [
+                                                true
+                                            ]
+                                        },
+                                        "ediServiceInvrpt": {
+                                            "enum": [
+                                                true,
+                                                false
+                                            ]
+                                        },
+                                        "ediServiceOrdchg": {
+                                            "enum": [
+                                                true,
+                                                false
+                                            ]
+                                        },
+                                        "ediServiceOrdrsp": {
+                                            "enum": [
+                                                true,
+                                                false
+                                            ]
+                                        }
+                                    },
+                                    "required": [
+                                        "ars",
+                                        "noos",
+                                        "ediServicePricat",
+                                        "ediServiceDesadv",
+                                        "ediServiceSlsrpt",
+                                        "ediServiceInvrpt",
+                                        "ediServiceOrdchg",
+                                        "ediServiceOrdrsp"
+                                    ],
+                                    "additionalProperties": false
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "ars": {
+                                            "enum": [
+                                                false
+                                            ]
+                                        },
+                                        "noos": {
+                                            "enum": [
+                                                false
+                                            ]
+                                        },
+                                        "ediServicePricat": {
+                                            "enum": [
+                                                true,
+                                                false
+                                            ]
+                                        },
+                                        "ediServiceDesadv": {
+                                            "enum": [
+                                                true,
+                                                false
+                                            ]
+                                        },
+                                        "ediServiceSlsrpt": {
+                                            "enum": [
+                                                true,
+                                                false
+                                            ]
+                                        },
+                                        "ediServiceInvrpt": {
+                                            "enum": [
+                                                true,
+                                                false
+                                            ]
+                                        },
+                                        "ediServiceOrdchg": {
+                                            "enum": [
+                                                true,
+                                                false
+                                            ]
+                                        },
+                                        "ediServiceOrdrsp": {
+                                            "enum": [
+                                                true,
+                                                false
+                                            ]
+                                        }
+                                    },
+                                    "required": [
+                                        "ars",
+                                        "noos",
+                                        "ediServicePricat",
+                                        "ediServiceDesadv",
+                                        "ediServiceSlsrpt",
+                                        "ediServiceInvrpt",
+                                        "ediServiceOrdchg",
+                                        "ediServiceOrdrsp"
+                                    ],
+                                    "additionalProperties": false
+                                }
+                            ]
+                        }
+                    },
+                    "required": [
+                        "newType",
+                        "minimumRequirements",
+                        "coopDiscount",
+                        "paymentTerms",
+                        "posManagerOrderPermission",
+                        "contract",
+                        "contractAddons",
+                        "edi"
+                    ],
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "title": "Cooperation-Partner",
+                    "properties": {
+                        "newType": {
+                            "enum": [
+                                "2"
+                            ]
+                        },
+                        "minimumRequirements": {
+                            "type": "object",
+                            "properties": {
+                                "matrixRange": {
+                                    "enum": [
+                                        0
+                                    ]
+                                },
+                                "salesAreaDimension": {
+                                    "type": "number",
+                                    "minimum": 20
+                                },
+                                "planedAnnualSales": {
+                                    "type": "number",
+                                    "minimum": 80000
+                                }
+                            },
+                            "required": [
+                                "salesAreaDimension",
+                                "planedAnnualSales"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "minimumRequirementsComment": {
+                            "type": "string"
+                        },
+                        "coopDiscount": {
+                            "type": "string",
+                            "pattern": "^[\\d]+([\\.,]{1,1}[\\d]{1,2})?%$",
+                            "default": "2%"
+                        },
+                        "coopDiscountComment": {
+                            "type": "string"
+                        },
+                        "openingDate": {
+                            "type": "string",
+                            "format": "date"
+                        },
+                        "paymentTerms": {
+                            "type": "string",
+                            "minLength": 1,
+                            "default": "10 Tage 4% Skonto"
+                        },
+                        "paymentTermsComment": {
+                            "type": "string"
+                        },
+                        "existingGroundPlot": {
+                            "enum": [
+                                true,
+                                false
+                            ]
+                        },
+                        "posManagerOrderPermission": {
+                            "enum": [
+                                true,
+                                false
+                            ]
+                        },
+                        "contract": {
+                            "type": "object",
+                            "properties": {
+                                "inceptionOfTreaty": {
+                                    "type": "string",
+                                    "pattern": "^[0-9]((0[0-9])|(1[0-2]))$"
+                                }
+                            },
+                            "required": [
+                                "inceptionOfTreaty"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "contractAddons": {
+                            "oneOf": [
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "storeConstruction": {
+                                            "enum": [
+                                                true
+                                            ]
+                                        },
+                                        "contractDuration": {
+                                            "type": "string",
+                                            "pattern": "^(([\\d]+)|(-))$",
+                                            "default": "5"
+                                        },
+                                        "contractDurationComment": {
+                                            "type": "string"
+                                        },
+                                        "storeConstructionDetails": {
+                                            "oneOf": [
+                                                {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "newStoreConstruction": {
+                                                            "enum": [
+                                                                true
+                                                            ]
+                                                        },
+                                                        "systemPricePerSquareMeter": {
+                                                            "type": "number",
+                                                            "minimum": 1
+                                                        },
+                                                        "openingWkz": {
+                                                            "type": "number"
+                                                        },
+                                                        "openingType": {
+                                                            "enum": [
+                                                                "center_opening",
+                                                                "only_store_opening"
+                                                            ]
+                                                        },
+                                                        "desiredInstallationDate": {
+                                                            "type": "string",
+                                                            "format": "date"
+                                                        },
+                                                        "changingRoom": {
+                                                            "oneOf": [
+                                                                {
+                                                                    "type": "object",
+                                                                    "properties": {
+                                                                        "desired": {
+                                                                            "enum": [
+                                                                                true
+                                                                            ]
+                                                                        },
+                                                                        "quantity": {
+                                                                            "type": "integer",
+                                                                            "minimum": 1
+                                                                        }
+                                                                    },
+                                                                    "required": [
+                                                                        "desired",
+                                                                        "quantity"
+                                                                    ],
+                                                                    "additionalProperties": false
+                                                                },
+                                                                {
+                                                                    "type": "object",
+                                                                    "properties": {
+                                                                        "desired": {
+                                                                            "enum": [
+                                                                                false
+                                                                            ]
+                                                                        }
+                                                                    },
+                                                                    "required": [
+                                                                        "desired"
+                                                                    ],
+                                                                    "additionalProperties": false
+                                                                }
+                                                            ]
+                                                        },
+                                                        "roomHeight": {
+                                                            "type": "integer"
+                                                        },
+                                                        "wallHeight": {
+                                                            "type": "integer"
+                                                        },
+                                                        "contactPlaningAndCost": {
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "salutation": {
+                                                                    "enum": [
+                                                                        "MS",
+                                                                        "MR"
+                                                                    ]
+                                                                },
+                                                                "firstName": {
+                                                                    "type": "string",
+                                                                    "minLength": 1
+                                                                },
+                                                                "lastName": {
+                                                                    "type": "string",
+                                                                    "minLength": 1
+                                                                },
+                                                                "phone": {
+                                                                    "type": "string",
+                                                                    "minLength": 1
+                                                                },
+                                                                "mobile": {
+                                                                    "type": "string",
+                                                                    "minLength": 1
+                                                                },
+                                                                "email": {
+                                                                    "type": "string",
+                                                                    "format": "email"
+                                                                },
+                                                                "comment": {
+                                                                    "type": "string"
+                                                                }
+                                                            },
+                                                            "required": [
+                                                                "salutation",
+                                                                "firstName",
+                                                                "lastName"
+                                                            ],
+                                                            "anyOf": [
+                                                                {
+                                                                    "required": [
+                                                                        "phone"
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "required": [
+                                                                        "mobile"
+                                                                    ]
+                                                                }
+                                                            ],
+                                                            "additionalProperties": false
+                                                        },
+                                                        "contactConstructionManagement": {
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "salutation": {
+                                                                    "enum": [
+                                                                        "MS",
+                                                                        "MR"
+                                                                    ]
+                                                                },
+                                                                "firstName": {
+                                                                    "type": "string",
+                                                                    "minLength": 1
+                                                                },
+                                                                "lastName": {
+                                                                    "type": "string",
+                                                                    "minLength": 1
+                                                                },
+                                                                "phone": {
+                                                                    "type": "string",
+                                                                    "minLength": 1
+                                                                },
+                                                                "mobile": {
+                                                                    "type": "string",
+                                                                    "minLength": 1
+                                                                },
+                                                                "email": {
+                                                                    "type": "string",
+                                                                    "format": "email"
+                                                                },
+                                                                "comment": {
+                                                                    "type": "string"
+                                                                }
+                                                            },
+                                                            "required": [
+                                                                "salutation",
+                                                                "firstName",
+                                                                "lastName"
+                                                            ],
+                                                            "anyOf": [
+                                                                {
+                                                                    "required": [
+                                                                        "phone"
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "required": [
+                                                                        "mobile"
+                                                                    ]
+                                                                }
+                                                            ],
+                                                            "additionalProperties": false
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "systemPricePerSquareMeter",
+                                                        "openingType",
+                                                        "desiredInstallationDate",
+                                                        "contactPlaningAndCost",
+                                                        "contactConstructionManagement"
+                                                    ],
+                                                    "additionalProperties": false
+                                                },
+                                                {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "newStoreConstruction": {
+                                                            "enum": [
+                                                                false
+                                                            ]
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "newStoreConstruction"
+                                                    ],
+                                                    "additionalProperties": false
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "required": [
+                                        "storeConstruction",
+                                        "contractDuration",
+                                        "storeConstructionDetails"
+                                    ],
+                                    "additionalProperties": false
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "storeConstruction": {
+                                            "enum": [
+                                                false
+                                            ]
+                                        },
+                                        "contractDuration": {
+                                            "type": "string",
+                                            "pattern": "^(([\\d]+)|(-))$",
+                                            "default": "2"
+                                        },
+                                        "contractDurationComment": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "storeConstruction",
+                                        "contractDuration"
+                                    ],
+                                    "additionalProperties": false
+                                }
+                            ]
+                        },
+                        "edi": {
+                            "type": "object",
+                            "properties": {
+                                "ars": {
+                                    "enum": [
+                                        true
+                                    ]
+                                },
+                                "noos": {
+                                    "enum": [
+                                        false
+                                    ]
+                                },
+                                "ediServicePricat": {
+                                    "enum": [
+                                        true
+                                    ]
+                                },
+                                "ediServiceDesadv": {
+                                    "enum": [
+                                        true
+                                    ]
+                                },
+                                "ediServiceSlsrpt": {
+                                    "enum": [
+                                        true
+                                    ]
+                                },
+                                "ediServiceInvrpt": {
+                                    "enum": [
+                                        true,
+                                        false
+                                    ]
+                                },
+                                "ediServiceOrdchg": {
+                                    "enum": [
+                                        true,
+                                        false
+                                    ]
+                                },
+                                "ediServiceOrdrsp": {
+                                    "enum": [
+                                        true,
+                                        false
+                                    ]
+                                }
+                            },
+                            "required": [
+                                "ars",
+                                "noos",
+                                "ediServicePricat",
+                                "ediServiceDesadv",
+                                "ediServiceSlsrpt",
+                                "ediServiceInvrpt",
+                                "ediServiceOrdchg",
+                                "ediServiceOrdrsp"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "initialEquipment": {
+                            "type": "object",
+                            "properties": {
+                                "temples": {
+                                    "enum": [
+                                        true,
+                                        false
+                                    ]
+                                },
+                                "logoLightBox": {
+                                    "enum": [
+                                        true,
+                                        false
+                                    ]
+                                }
+                            },
+                            "additionalProperties": false
+                        }
+                    },
+                    "required": [
+                        "newType",
+                        "minimumRequirements",
+                        "coopDiscount",
+                        "openingDate",
+                        "paymentTerms",
+                        "existingGroundPlot",
+                        "posManagerOrderPermission",
+                        "contract",
+                        "contractAddons",
+                        "edi"
+                    ],
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "title": "Vertical Cooperation-Partner",
+                    "properties": {
+                        "newType": {
+                            "enum": [
+                                "3"
+                            ]
+                        },
+                        "minimumRequirements": {
+                            "oneOf": [
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "matrixRange": {
+                                            "enum": [
+                                                0
+                                            ]
+                                        },
+                                        "salesAreaDimension": {
+                                            "type": "number",
+                                            "minimum": 30
+                                        },
+                                        "planedAnnualSales": {
+                                            "type": "number",
+                                            "minimum": 90000
+                                        }
+                                    },
+                                    "required": [
+                                        "salesAreaDimension",
+                                        "planedAnnualSales"
+                                    ],
+                                    "additionalProperties": false
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "matrixRange": {
+                                            "enum": [
+                                                30
+                                            ]
+                                        },
+                                        "salesAreaDimension": {
+                                            "type": "number",
+                                            "minimum": 30
+                                        },
+                                        "planedAnnualSales": {
+                                            "type": "number",
+                                            "minimum": 90000
+                                        }
+                                    },
+                                    "required": [
+                                        "salesAreaDimension",
+                                        "planedAnnualSales"
+                                    ],
+                                    "additionalProperties": false
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "matrixRange": {
+                                            "enum": [
+                                                45
+                                            ]
+                                        },
+                                        "salesAreaDimension": {
+                                            "type": "number",
+                                            "minimum": 30
+                                        },
+                                        "planedAnnualSales": {
+                                            "type": "number",
+                                            "minimum": 140000
+                                        }
+                                    },
+                                    "required": [
+                                        "salesAreaDimension",
+                                        "planedAnnualSales"
+                                    ],
+                                    "additionalProperties": false
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "matrixRange": {
+                                            "enum": [
+                                                60
+                                            ]
+                                        },
+                                        "salesAreaDimension": {
+                                            "type": "number",
+                                            "minimum": 30
+                                        },
+                                        "planedAnnualSales": {
+                                            "type": "number",
+                                            "minimum": 200000
+                                        }
+                                    },
+                                    "required": [
+                                        "salesAreaDimension",
+                                        "planedAnnualSales"
+                                    ],
+                                    "additionalProperties": false
+                                }
+                            ]
+                        },
+                        "minimumRequirementsComment": {
+                            "type": "string"
+                        },
+                        "coopDiscount": {
+                            "type": "string",
+                            "pattern": "^[\\d]+([\\.,]{1,1}[\\d]{1,2})?%$",
+                            "default": "4%"
+                        },
+                        "coopDiscountComment": {
+                            "type": "string"
+                        },
+                        "openingDate": {
+                            "type": "string",
+                            "format": "date"
+                        },
+                        "paymentTerms": {
+                            "type": "string",
+                            "minLength": 1,
+                            "default": "10 Tage 4% Skonto"
+                        },
+                        "paymentTermsComment": {
+                            "type": "string"
+                        },
+                        "existingGroundPlot": {
+                            "enum": [
+                                true,
+                                false
+                            ]
+                        },
+                        "posManagerOrderPermission": {
+                            "enum": [
+                                true
+                            ]
+                        },
+                        "contract": {
+                            "type": "object",
+                            "properties": {
+                                "inceptionOfTreaty": {
+                                    "type": "string",
+                                    "pattern": "^[0-9]((0[0-9])|(1[0-2]))$"
+                                }
+                            },
+                            "required": [
+                                "inceptionOfTreaty"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "contractAddons": {
+                            "oneOf": [
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "storeConstruction": {
+                                            "enum": [
+                                                true
+                                            ]
+                                        },
+                                        "contractDuration": {
+                                            "type": "string",
+                                            "pattern": "^(([\\d]+)|(-))$",
+                                            "default": "5"
+                                        },
+                                        "contractDurationComment": {
+                                            "type": "string"
+                                        },
+                                        "storeConstructionDetails": {
+                                            "oneOf": [
+                                                {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "newStoreConstruction": {
+                                                            "enum": [
+                                                                true
+                                                            ]
+                                                        },
+                                                        "systemPricePerSquareMeter": {
+                                                            "type": "number",
+                                                            "minimum": 1
+                                                        },
+                                                        "openingWkz": {
+                                                            "type": "number"
+                                                        },
+                                                        "openingType": {
+                                                            "enum": [
+                                                                "center_opening",
+                                                                "only_store_opening"
+                                                            ]
+                                                        },
+                                                        "desiredInstallationDate": {
+                                                            "type": "string",
+                                                            "format": "date"
+                                                        },
+                                                        "changingRoom": {
+                                                            "oneOf": [
+                                                                {
+                                                                    "type": "object",
+                                                                    "properties": {
+                                                                        "desired": {
+                                                                            "enum": [
+                                                                                true
+                                                                            ]
+                                                                        },
+                                                                        "quantity": {
+                                                                            "type": "integer",
+                                                                            "minimum": 1
+                                                                        }
+                                                                    },
+                                                                    "required": [
+                                                                        "desired",
+                                                                        "quantity"
+                                                                    ],
+                                                                    "additionalProperties": false
+                                                                },
+                                                                {
+                                                                    "type": "object",
+                                                                    "properties": {
+                                                                        "desired": {
+                                                                            "enum": [
+                                                                                false
+                                                                            ]
+                                                                        }
+                                                                    },
+                                                                    "required": [
+                                                                        "desired"
+                                                                    ],
+                                                                    "additionalProperties": false
+                                                                }
+                                                            ]
+                                                        },
+                                                        "roomHeight": {
+                                                            "type": "integer"
+                                                        },
+                                                        "wallHeight": {
+                                                            "type": "integer"
+                                                        },
+                                                        "contactPlaningAndCost": {
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "salutation": {
+                                                                    "enum": [
+                                                                        "MS",
+                                                                        "MR"
+                                                                    ]
+                                                                },
+                                                                "firstName": {
+                                                                    "type": "string",
+                                                                    "minLength": 1
+                                                                },
+                                                                "lastName": {
+                                                                    "type": "string",
+                                                                    "minLength": 1
+                                                                },
+                                                                "phone": {
+                                                                    "type": "string",
+                                                                    "minLength": 1
+                                                                },
+                                                                "mobile": {
+                                                                    "type": "string",
+                                                                    "minLength": 1
+                                                                },
+                                                                "email": {
+                                                                    "type": "string",
+                                                                    "format": "email"
+                                                                },
+                                                                "comment": {
+                                                                    "type": "string"
+                                                                }
+                                                            },
+                                                            "required": [
+                                                                "salutation",
+                                                                "firstName",
+                                                                "lastName"
+                                                            ],
+                                                            "anyOf": [
+                                                                {
+                                                                    "required": [
+                                                                        "phone"
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "required": [
+                                                                        "mobile"
+                                                                    ]
+                                                                }
+                                                            ],
+                                                            "additionalProperties": false
+                                                        },
+                                                        "contactConstructionManagement": {
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "salutation": {
+                                                                    "enum": [
+                                                                        "MS",
+                                                                        "MR"
+                                                                    ]
+                                                                },
+                                                                "firstName": {
+                                                                    "type": "string",
+                                                                    "minLength": 1
+                                                                },
+                                                                "lastName": {
+                                                                    "type": "string",
+                                                                    "minLength": 1
+                                                                },
+                                                                "phone": {
+                                                                    "type": "string",
+                                                                    "minLength": 1
+                                                                },
+                                                                "mobile": {
+                                                                    "type": "string",
+                                                                    "minLength": 1
+                                                                },
+                                                                "email": {
+                                                                    "type": "string",
+                                                                    "format": "email"
+                                                                },
+                                                                "comment": {
+                                                                    "type": "string"
+                                                                }
+                                                            },
+                                                            "required": [
+                                                                "salutation",
+                                                                "firstName",
+                                                                "lastName"
+                                                            ],
+                                                            "anyOf": [
+                                                                {
+                                                                    "required": [
+                                                                        "phone"
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "required": [
+                                                                        "mobile"
+                                                                    ]
+                                                                }
+                                                            ],
+                                                            "additionalProperties": false
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "systemPricePerSquareMeter",
+                                                        "openingType",
+                                                        "desiredInstallationDate",
+                                                        "contactPlaningAndCost",
+                                                        "contactConstructionManagement"
+                                                    ],
+                                                    "additionalProperties": false
+                                                },
+                                                {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "newStoreConstruction": {
+                                                            "enum": [
+                                                                false
+                                                            ]
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "newStoreConstruction"
+                                                    ],
+                                                    "additionalProperties": false
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "required": [
+                                        "storeConstruction",
+                                        "contractDuration",
+                                        "storeConstructionDetails"
+                                    ],
+                                    "additionalProperties": false
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "storeConstruction": {
+                                            "enum": [
+                                                false
+                                            ]
+                                        },
+                                        "contractDuration": {
+                                            "type": "string",
+                                            "pattern": "^(([\\d]+)|(-))$",
+                                            "default": "2"
+                                        },
+                                        "contractDurationComment": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "storeConstruction",
+                                        "contractDuration"
+                                    ],
+                                    "additionalProperties": false
+                                }
+                            ]
+                        },
+                        "edi": {
+                            "type": "object",
+                            "properties": {
+                                "noos": {
+                                    "enum": [
+                                        true
+                                    ]
+                                },
+                                "ars": {
+                                    "enum": [
+                                        false
+                                    ]
+                                },
+                                "ediServicePricat": {
+                                    "enum": [
+                                        true
+                                    ]
+                                },
+                                "ediServiceDesadv": {
+                                    "enum": [
+                                        true
+                                    ]
+                                },
+                                "ediServiceSlsrpt": {
+                                    "enum": [
+                                        true
+                                    ]
+                                },
+                                "ediServiceInvrpt": {
+                                    "enum": [
+                                        true
+                                    ]
+                                },
+                                "ediServiceOrdchg": {
+                                    "enum": [
+                                        true,
+                                        false
+                                    ]
+                                },
+                                "ediServiceOrdrsp": {
+                                    "enum": [
+                                        true,
+                                        false
+                                    ]
+                                }
+                            },
+                            "required": [
+                                "noos",
+                                "ars",
+                                "ediServicePricat",
+                                "ediServiceDesadv",
+                                "ediServiceSlsrpt",
+                                "ediServiceInvrpt",
+                                "ediServiceOrdchg",
+                                "ediServiceOrdrsp"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "initialEquipment": {
+                            "type": "object",
+                            "properties": {
+                                "temples": {
+                                    "enum": [
+                                        true,
+                                        false
+                                    ]
+                                },
+                                "logoLightBox": {
+                                    "enum": [
+                                        true,
+                                        false
+                                    ]
+                                }
+                            },
+                            "additionalProperties": false
+                        }
+                    },
+                    "required": [
+                        "newType",
+                        "minimumRequirements",
+                        "coopDiscount",
+                        "openingDate",
+                        "paymentTerms",
+                        "existingGroundPlot",
+                        "posManagerOrderPermission",
+                        "contract",
+                        "contractAddons",
+                        "edi"
+                    ],
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "title": "Vertical Shop-Partner",
+                    "properties": {
+                        "newType": {
+                            "enum": [
+                                "4"
+                            ]
+                        },
+                        "minimumRequirements": {
+                            "oneOf": [
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "matrixRange": {
+                                            "enum": [
+                                                0
+                                            ]
+                                        },
+                                        "salesAreaDimension": {
+                                            "type": "number",
+                                            "minimum": 30
+                                        },
+                                        "planedAnnualSales": {
+                                            "type": "number",
+                                            "minimum": 90000
+                                        }
+                                    },
+                                    "required": [
+                                        "salesAreaDimension",
+                                        "planedAnnualSales"
+                                    ],
+                                    "additionalProperties": false
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "matrixRange": {
+                                            "enum": [
+                                                30
+                                            ]
+                                        },
+                                        "salesAreaDimension": {
+                                            "type": "number",
+                                            "minimum": 30
+                                        },
+                                        "planedAnnualSales": {
+                                            "type": "number",
+                                            "minimum": 90000
+                                        }
+                                    },
+                                    "required": [
+                                        "salesAreaDimension",
+                                        "planedAnnualSales"
+                                    ],
+                                    "additionalProperties": false
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "matrixRange": {
+                                            "enum": [
+                                                45
+                                            ]
+                                        },
+                                        "salesAreaDimension": {
+                                            "type": "number",
+                                            "minimum": 30
+                                        },
+                                        "planedAnnualSales": {
+                                            "type": "number",
+                                            "minimum": 140000
+                                        }
+                                    },
+                                    "required": [
+                                        "salesAreaDimension",
+                                        "planedAnnualSales"
+                                    ],
+                                    "additionalProperties": false
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "matrixRange": {
+                                            "enum": [
+                                                60
+                                            ]
+                                        },
+                                        "salesAreaDimension": {
+                                            "type": "number",
+                                            "minimum": 30
+                                        },
+                                        "planedAnnualSales": {
+                                            "type": "number",
+                                            "minimum": 200000
+                                        }
+                                    },
+                                    "required": [
+                                        "salesAreaDimension",
+                                        "planedAnnualSales"
+                                    ],
+                                    "additionalProperties": false
+                                }
+                            ]
+                        },
+                        "minimumRequirementsComment": {
+                            "type": "string"
+                        },
+                        "coopDiscount": {
+                            "type": "string",
+                            "pattern": "^[\\d]+([\\.,]{1,1}[\\d]{1,2})?%$",
+                            "default": "6%"
+                        },
+                        "coopDiscountComment": {
+                            "type": "string"
+                        },
+                        "openingDate": {
+                            "type": "string",
+                            "format": "date"
+                        },
+                        "paymentTerms": {
+                            "type": "string",
+                            "minLength": 1,
+                            "default": "10 Tage 4% Skonto"
+                        },
+                        "paymentTermsComment": {
+                            "type": "string"
+                        },
+                        "existingGroundPlot": {
+                            "enum": [
+                                true,
+                                false
+                            ]
+                        },
+                        "posManagerOrderPermission": {
+                            "enum": [
+                                true
+                            ]
+                        },
+                        "contract": {
+                            "type": "object",
+                            "properties": {
+                                "inceptionOfTreaty": {
+                                    "type": "string",
+                                    "pattern": "^[0-9]((0[0-9])|(1[0-2]))$"
+                                }
+                            },
+                            "required": [
+                                "inceptionOfTreaty"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "contractAddons": {
+                            "type": "object",
+                            "properties": {
+                                "storeConstruction": {
+                                    "enum": [
+                                        true
+                                    ]
+                                },
+                                "contractDuration": {
+                                    "type": "string",
+                                    "pattern": "^(([\\d]+)|(-))$",
+                                    "default": "5"
+                                },
+                                "contractDurationComment": {
+                                    "type": "string"
+                                },
+                                "storeConstructionDetails": {
+                                    "oneOf": [
+                                        {
+                                            "type": "object",
+                                            "properties": {
+                                                "newStoreConstruction": {
+                                                    "enum": [
+                                                        true
+                                                    ]
+                                                },
+                                                "systemPricePerSquareMeter": {
+                                                    "type": "number",
+                                                    "minimum": 1
+                                                },
+                                                "openingWkz": {
+                                                    "type": "number"
+                                                },
+                                                "openingType": {
+                                                    "enum": [
+                                                        "center_opening",
+                                                        "only_store_opening"
+                                                    ]
+                                                },
+                                                "desiredInstallationDate": {
+                                                    "type": "string",
+                                                    "format": "date"
+                                                },
+                                                "changingRoom": {
+                                                    "oneOf": [
+                                                        {
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "desired": {
+                                                                    "enum": [
+                                                                        true
+                                                                    ]
+                                                                },
+                                                                "quantity": {
+                                                                    "type": "integer",
+                                                                    "minimum": 1
+                                                                }
+                                                            },
+                                                            "required": [
+                                                                "desired",
+                                                                "quantity"
+                                                            ],
+                                                            "additionalProperties": false
+                                                        },
+                                                        {
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "desired": {
+                                                                    "enum": [
+                                                                        false
+                                                                    ]
+                                                                }
+                                                            },
+                                                            "required": [
+                                                                "desired"
+                                                            ],
+                                                            "additionalProperties": false
+                                                        }
+                                                    ]
+                                                },
+                                                "roomHeight": {
+                                                    "type": "integer"
+                                                },
+                                                "wallHeight": {
+                                                    "type": "integer"
+                                                },
+                                                "contactPlaningAndCost": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "salutation": {
+                                                            "enum": [
+                                                                "MS",
+                                                                "MR"
+                                                            ]
+                                                        },
+                                                        "firstName": {
+                                                            "type": "string",
+                                                            "minLength": 1
+                                                        },
+                                                        "lastName": {
+                                                            "type": "string",
+                                                            "minLength": 1
+                                                        },
+                                                        "phone": {
+                                                            "type": "string",
+                                                            "minLength": 1
+                                                        },
+                                                        "mobile": {
+                                                            "type": "string",
+                                                            "minLength": 1
+                                                        },
+                                                        "email": {
+                                                            "type": "string",
+                                                            "format": "email"
+                                                        },
+                                                        "comment": {
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "salutation",
+                                                        "firstName",
+                                                        "lastName"
+                                                    ],
+                                                    "anyOf": [
+                                                        {
+                                                            "required": [
+                                                                "phone"
+                                                            ]
+                                                        },
+                                                        {
+                                                            "required": [
+                                                                "mobile"
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "additionalProperties": false
+                                                },
+                                                "contactConstructionManagement": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "salutation": {
+                                                            "enum": [
+                                                                "MS",
+                                                                "MR"
+                                                            ]
+                                                        },
+                                                        "firstName": {
+                                                            "type": "string",
+                                                            "minLength": 1
+                                                        },
+                                                        "lastName": {
+                                                            "type": "string",
+                                                            "minLength": 1
+                                                        },
+                                                        "phone": {
+                                                            "type": "string",
+                                                            "minLength": 1
+                                                        },
+                                                        "mobile": {
+                                                            "type": "string",
+                                                            "minLength": 1
+                                                        },
+                                                        "email": {
+                                                            "type": "string",
+                                                            "format": "email"
+                                                        },
+                                                        "comment": {
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "salutation",
+                                                        "firstName",
+                                                        "lastName"
+                                                    ],
+                                                    "anyOf": [
+                                                        {
+                                                            "required": [
+                                                                "phone"
+                                                            ]
+                                                        },
+                                                        {
+                                                            "required": [
+                                                                "mobile"
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "additionalProperties": false
+                                                }
+                                            },
+                                            "required": [
+                                                "systemPricePerSquareMeter",
+                                                "openingType",
+                                                "desiredInstallationDate",
+                                                "contactPlaningAndCost",
+                                                "contactConstructionManagement"
+                                            ],
+                                            "additionalProperties": false
+                                        }
+                                    ]
+                                }
+                            },
+                            "required": [
+                                "storeConstruction",
+                                "contractDuration",
+                                "storeConstructionDetails"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "edi": {
+                            "type": "object",
+                            "properties": {
+                                "noos": {
+                                    "enum": [
+                                        true
+                                    ]
+                                },
+                                "ars": {
+                                    "enum": [
+                                        false
+                                    ]
+                                },
+                                "ediServicePricat": {
+                                    "enum": [
+                                        true
+                                    ]
+                                },
+                                "ediServiceDesadv": {
+                                    "enum": [
+                                        true
+                                    ]
+                                },
+                                "ediServiceSlsrpt": {
+                                    "enum": [
+                                        true
+                                    ]
+                                },
+                                "ediServiceInvrpt": {
+                                    "enum": [
+                                        true
+                                    ]
+                                },
+                                "ediServiceOrdchg": {
+                                    "enum": [
+                                        true,
+                                        false
+                                    ]
+                                },
+                                "ediServiceOrdrsp": {
+                                    "enum": [
+                                        true,
+                                        false
+                                    ]
+                                }
+                            },
+                            "required": [
+                                "noos",
+                                "ars",
+                                "ediServicePricat",
+                                "ediServiceDesadv",
+                                "ediServiceSlsrpt",
+                                "ediServiceInvrpt",
+                                "ediServiceOrdchg",
+                                "ediServiceOrdrsp"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "initialEquipment": {
+                            "type": "object",
+                            "properties": {
+                                "temples": {
+                                    "enum": [
+                                        true,
+                                        false
+                                    ]
+                                },
+                                "logoLightBox": {
+                                    "enum": [
+                                        true,
+                                        false
+                                    ]
+                                }
+                            },
+                            "required": [
+                                "temples",
+                                "logoLightBox"
+                            ],
+                            "additionalProperties": false
+                        }
+                    },
+                    "required": [
+                        "newType",
+                        "minimumRequirements",
+                        "coopDiscount",
+                        "openingDate",
+                        "paymentTerms",
+                        "existingGroundPlot",
+                        "posManagerOrderPermission",
+                        "contract",
+                        "contractAddons",
+                        "edi",
+                        "initialEquipment"
+                    ],
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "title": "Depot-/Concession-Partner",
+                    "properties": {
+                        "newType": {
+                            "enum": [
+                                "5"
+                            ]
+                        },
+                        "minimumRequirements": {
+                            "oneOf": [
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "matrixRange": {
+                                            "enum": [
+                                                0
+                                            ]
+                                        },
+                                        "salesAreaDimension": {
+                                            "type": "number",
+                                            "minimum": 20
+                                        },
+                                        "planedAnnualSales": {
+                                            "type": "number",
+                                            "minimum": 100000
+                                        }
+                                    },
+                                    "required": [
+                                        "salesAreaDimension",
+                                        "planedAnnualSales"
+                                    ],
+                                    "additionalProperties": false
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "matrixRange": {
+                                            "enum": [
+                                                20
+                                            ]
+                                        },
+                                        "salesAreaDimension": {
+                                            "type": "number",
+                                            "minimum": 20
+                                        },
+                                        "planedAnnualSales": {
+                                            "type": "number",
+                                            "minimum": 100000
+                                        }
+                                    },
+                                    "required": [
+                                        "salesAreaDimension",
+                                        "planedAnnualSales"
+                                    ],
+                                    "additionalProperties": false
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "matrixRange": {
+                                            "enum": [
+                                                40
+                                            ]
+                                        },
+                                        "salesAreaDimension": {
+                                            "type": "number",
+                                            "minimum": 20
+                                        },
+                                        "planedAnnualSales": {
+                                            "type": "number",
+                                            "minimum": 140000
+                                        }
+                                    },
+                                    "required": [
+                                        "salesAreaDimension",
+                                        "planedAnnualSales"
+                                    ],
+                                    "additionalProperties": false
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "matrixRange": {
+                                            "enum": [
+                                                60
+                                            ]
+                                        },
+                                        "salesAreaDimension": {
+                                            "type": "number",
+                                            "minimum": 20
+                                        },
+                                        "planedAnnualSales": {
+                                            "type": "number",
+                                            "minimum": 200000
+                                        }
+                                    },
+                                    "required": [
+                                        "salesAreaDimension",
+                                        "planedAnnualSales"
+                                    ],
+                                    "additionalProperties": false
+                                }
+                            ]
+                        },
+                        "minimumRequirementsComment": {
+                            "type": "string"
+                        },
+                        "coopDiscount": {
+                            "type": "string",
+                            "pattern": "^[\\d]+([\\.,]{1,1}[\\d]{1,2})?%$",
+                            "default": "0%"
+                        },
+                        "coopDiscountComment": {
+                            "type": "string"
+                        },
+                        "openingDate": {
+                            "type": "string",
+                            "format": "date"
+                        },
+                        "paymentTerms": {
+                            "type": "string",
+                            "minLength": 1,
+                            "default": "-"
+                        },
+                        "paymentTermsComment": {
+                            "type": "string"
+                        },
+                        "existingGroundPlot": {
+                            "enum": [
+                                true,
+                                false
+                            ]
+                        },
+                        "posManagerOrderPermission": {
+                            "enum": [
+                                true,
+                                false
+                            ]
+                        },
+                        "contract": {
+                            "type": "object",
+                            "properties": {
+                                "inceptionOfTreaty": {
+                                    "type": "string",
+                                    "pattern": "^[0-9]((0[0-9])|(1[0-2]))$"
+                                }
+                            },
+                            "required": [
+                                "inceptionOfTreaty"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "contractAddons": {
+                            "oneOf": [
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "storeConstruction": {
+                                            "enum": [
+                                                true
+                                            ]
+                                        },
+                                        "contractDuration": {
+                                            "type": "string",
+                                            "pattern": "^(([\\d]+)|(-))$",
+                                            "default": "5"
+                                        },
+                                        "contractDurationComment": {
+                                            "type": "string"
+                                        },
+                                        "storeConstructionDetails": {
+                                            "oneOf": [
+                                                {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "newStoreConstruction": {
+                                                            "enum": [
+                                                                true
+                                                            ]
+                                                        },
+                                                        "systemPricePerSquareMeter": {
+                                                            "type": "number",
+                                                            "minimum": 1
+                                                        },
+                                                        "openingWkz": {
+                                                            "type": "number"
+                                                        },
+                                                        "openingType": {
+                                                            "enum": [
+                                                                "center_opening",
+                                                                "only_store_opening"
+                                                            ]
+                                                        },
+                                                        "desiredInstallationDate": {
+                                                            "type": "string",
+                                                            "format": "date"
+                                                        },
+                                                        "changingRoom": {
+                                                            "oneOf": [
+                                                                {
+                                                                    "type": "object",
+                                                                    "properties": {
+                                                                        "desired": {
+                                                                            "enum": [
+                                                                                true
+                                                                            ]
+                                                                        },
+                                                                        "quantity": {
+                                                                            "type": "integer",
+                                                                            "minimum": 1
+                                                                        }
+                                                                    },
+                                                                    "required": [
+                                                                        "desired",
+                                                                        "quantity"
+                                                                    ],
+                                                                    "additionalProperties": false
+                                                                },
+                                                                {
+                                                                    "type": "object",
+                                                                    "properties": {
+                                                                        "desired": {
+                                                                            "enum": [
+                                                                                false
+                                                                            ]
+                                                                        }
+                                                                    },
+                                                                    "required": [
+                                                                        "desired"
+                                                                    ],
+                                                                    "additionalProperties": false
+                                                                }
+                                                            ]
+                                                        },
+                                                        "roomHeight": {
+                                                            "type": "integer"
+                                                        },
+                                                        "wallHeight": {
+                                                            "type": "integer"
+                                                        },
+                                                        "contactPlaningAndCost": {
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "salutation": {
+                                                                    "enum": [
+                                                                        "MS",
+                                                                        "MR"
+                                                                    ]
+                                                                },
+                                                                "firstName": {
+                                                                    "type": "string",
+                                                                    "minLength": 1
+                                                                },
+                                                                "lastName": {
+                                                                    "type": "string",
+                                                                    "minLength": 1
+                                                                },
+                                                                "phone": {
+                                                                    "type": "string",
+                                                                    "minLength": 1
+                                                                },
+                                                                "mobile": {
+                                                                    "type": "string",
+                                                                    "minLength": 1
+                                                                },
+                                                                "email": {
+                                                                    "type": "string",
+                                                                    "format": "email"
+                                                                },
+                                                                "comment": {
+                                                                    "type": "string"
+                                                                }
+                                                            },
+                                                            "required": [
+                                                                "salutation",
+                                                                "firstName",
+                                                                "lastName"
+                                                            ],
+                                                            "anyOf": [
+                                                                {
+                                                                    "required": [
+                                                                        "phone"
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "required": [
+                                                                        "mobile"
+                                                                    ]
+                                                                }
+                                                            ],
+                                                            "additionalProperties": false
+                                                        },
+                                                        "contactConstructionManagement": {
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "salutation": {
+                                                                    "enum": [
+                                                                        "MS",
+                                                                        "MR"
+                                                                    ]
+                                                                },
+                                                                "firstName": {
+                                                                    "type": "string",
+                                                                    "minLength": 1
+                                                                },
+                                                                "lastName": {
+                                                                    "type": "string",
+                                                                    "minLength": 1
+                                                                },
+                                                                "phone": {
+                                                                    "type": "string",
+                                                                    "minLength": 1
+                                                                },
+                                                                "mobile": {
+                                                                    "type": "string",
+                                                                    "minLength": 1
+                                                                },
+                                                                "email": {
+                                                                    "type": "string",
+                                                                    "format": "email"
+                                                                },
+                                                                "comment": {
+                                                                    "type": "string"
+                                                                }
+                                                            },
+                                                            "required": [
+                                                                "salutation",
+                                                                "firstName",
+                                                                "lastName"
+                                                            ],
+                                                            "anyOf": [
+                                                                {
+                                                                    "required": [
+                                                                        "phone"
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "required": [
+                                                                        "mobile"
+                                                                    ]
+                                                                }
+                                                            ],
+                                                            "additionalProperties": false
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "systemPricePerSquareMeter",
+                                                        "openingType",
+                                                        "desiredInstallationDate",
+                                                        "contactPlaningAndCost",
+                                                        "contactConstructionManagement"
+                                                    ],
+                                                    "additionalProperties": false
+                                                },
+                                                {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "newStoreConstruction": {
+                                                            "enum": [
+                                                                false
+                                                            ]
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "newStoreConstruction"
+                                                    ],
+                                                    "additionalProperties": false
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "required": [
+                                        "storeConstruction",
+                                        "contractDuration",
+                                        "storeConstructionDetails"
+                                    ],
+                                    "additionalProperties": false
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "storeConstruction": {
+                                            "enum": [
+                                                false
+                                            ]
+                                        },
+                                        "contractDuration": {
+                                            "type": "string",
+                                            "pattern": "^(([\\d]+)|(-))$",
+                                            "default": "2"
+                                        },
+                                        "contractDurationComment": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "storeConstruction",
+                                        "contractDuration"
+                                    ],
+                                    "additionalProperties": false
+                                }
+                            ]
+                        },
+                        "edi": {
+                            "type": "object",
+                            "properties": {
+                                "noos": {
+                                    "enum": [
+                                        true
+                                    ]
+                                },
+                                "ars": {
+                                    "enum": [
+                                        false
+                                    ]
+                                },
+                                "ediServicePricat": {
+                                    "enum": [
+                                        true
+                                    ]
+                                },
+                                "ediServiceDesadv": {
+                                    "enum": [
+                                        true
+                                    ]
+                                },
+                                "ediServiceSlsrpt": {
+                                    "enum": [
+                                        true
+                                    ]
+                                },
+                                "ediServiceInvrpt": {
+                                    "enum": [
+                                        true
+                                    ]
+                                },
+                                "ediServiceOrdchg": {
+                                    "enum": [
+                                        true
+                                    ]
+                                },
+                                "ediServiceOrdrsp": {
+                                    "enum": [
+                                        true
+                                    ]
+                                }
+                            },
+                            "required": [
+                                "noos",
+                                "ars",
+                                "ediServicePricat",
+                                "ediServiceDesadv",
+                                "ediServiceSlsrpt",
+                                "ediServiceInvrpt",
+                                "ediServiceOrdchg",
+                                "ediServiceOrdrsp"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "initialEquipment": {
+                            "type": "object",
+                            "properties": {
+                                "temples": {
+                                    "enum": [
+                                        true,
+                                        false
+                                    ]
+                                },
+                                "logoLightBox": {
+                                    "enum": [
+                                        true,
+                                        false
+                                    ]
+                                }
+                            },
+                            "additionalProperties": false
+                        }
+                    },
+                    "required": [
+                        "newType",
+                        "minimumRequirements",
+                        "coopDiscount",
+                        "openingDate",
+                        "paymentTerms",
+                        "existingGroundPlot",
+                        "posManagerOrderPermission",
+                        "contract",
+                        "contractAddons",
+                        "edi"
+                    ],
+                    "additionalProperties": false
+                }
+            ]
+        },
+        "ediContact": {
+            "oneOf": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "ediServiceEnabled": {
+                            "enum": [
+                                true
+                            ]
+                        },
+                        "salutation": {
+                            "enum": [
+                                "MS",
+                                "MR"
+                            ]
+                        },
+                        "firstName": {
+                            "type": "string",
+                            "minLength": 1
+                        },
+                        "lastName": {
+                            "type": "string",
+                            "minLength": 1
+                        },
+                        "phone": {
+                            "type": "string",
+                            "minLength": 1
+                        },
+                        "mobile": {
+                            "type": "string",
+                            "minLength": 1
+                        },
+                        "email": {
+                            "type": "string",
+                            "format": "email"
+                        }
+                    },
+                    "required": [
+                        "ediServiceEnabled",
+                        "salutation",
+                        "firstName",
+                        "lastName",
+                        "email"
+                    ],
+                    "anyOf": [
+                        {
+                            "required": [
+                                "phone"
+                            ]
+                        },
+                        {
+                            "required": [
+                                "mobile"
+                            ]
+                        }
+                    ],
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "ediServiceEnabled": {
+                            "enum": [
+                                false
+                            ]
+                        },
+                        "salutation": {
+                            "enum": [
+                                "MS",
+                                "MR"
+                            ]
+                        },
+                        "firstName": {
+                            "type": "string",
+                            "minLength": 1
+                        },
+                        "lastName": {
+                            "type": "string",
+                            "minLength": 1
+                        },
+                        "phone": {
+                            "type": "string",
+                            "minLength": 1
+                        },
+                        "mobile": {
+                            "type": "string",
+                            "minLength": 1
+                        },
+                        "email": {
+                            "type": "string",
+                            "format": "email"
+                        }
+                    },
+                    "required": [
+                        "ediServiceEnabled"
+                    ],
+                    "additionalProperties": false
+                }
+            ]
+        },
+        "invoice": {
+            "type": "object",
+            "properties": {
+                "ediServiceInvoic": {
+                    "type": "object",
+                    "properties": {
+                        "enabled": {
+                            "enum": [
+                                true,
+                                false
+                            ]
+                        }
+                    },
+                    "required": [
+                        "enabled"
+                    ],
+                    "additionalProperties": false
+                },
+                "acknowledgedNoInvoiceService": {
+                    "type": "boolean"
+                },
+                "invoiceComment": {
+                    "type": "string"
+                },
+                "email": {
+                    "oneOf": [
+                        {
+                            "type": "object",
+                            "properties": {
+                                "pdfInvoice": {
+                                    "enum": [
+                                        true
+                                    ]
+                                },
+                                "invoiceEmailAddress": {
+                                    "type": "string",
+                                    "format": "email"
+                                }
+                            },
+                            "required": [
+                                "pdfInvoice",
+                                "invoiceEmailAddress"
+                            ],
+                            "additionalProperties": false
+                        },
+                        {
+                            "type": "object",
+                            "properties": {
+                                "pdfInvoice": {
+                                    "enum": [
+                                        false
+                                    ]
+                                }
+                            },
+                            "additionalProperties": false
+                        }
+                    ]
+                }
+            },
+            "required": [
+                "ediServiceInvoic",
+                "email"
+            ],
+            "additionalProperties": false
+        },
+        "invoiceAddress": {
+            "type": "object",
+            "properties": {
+                "recipient": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "street": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "city": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "zipCode": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "countryKey": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "deliveryDistrict": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "recipient",
+                "street",
+                "city",
+                "zipCode",
+                "countryKey"
+            ],
+            "additionalProperties": false
+        },
+        "parcelService": {
+            "enum": [
+                "in_use",
+                "want_use",
+                "no_use"
+            ]
+        },
+        "graphicalMaterial": {
+            "oneOf": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "utilization": {
+                            "enum": [
+                                true
+                            ]
+                        },
+                        "reason": {
+                            "type": "string",
+                            "minLength": 2
+                        }
+                    },
+                    "required": [
+                        "utilization",
+                        "reason"
+                    ],
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "utilization": {
+                            "enum": [
+                                false
+                            ]
+                        }
+                    },
+                    "required": [
+                        "utilization"
+                    ],
+                    "additionalProperties": false
+                }
+            ]
+        },
+        "approver": {
+            "type": "object",
+            "properties": {
+                "email": {
+                    "type": "string",
+                    "format": "email"
+                },
+                "language": {
+                    "type": "string",
+                    "minLength": 2,
+                    "maxLength": 2
+                },
+                "salutation": {
+                    "enum": [
+                        "MS",
+                        "MR"
+                    ]
+                },
+                "first_name": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "last_name": {
+                    "type": "string",
+                    "minLength": 1
+                }
+            },
+            "required": [
+                "email",
+                "salutation",
+                "first_name",
+                "last_name",
+                "language"
+            ],
+            "additionalProperties": false
+        },
+        "internalRepresentative1": {
+            "type": "object",
+            "properties": {
+                "email": {
+                    "type": "string",
+                    "format": "email"
+                },
+                "language": {
+                    "type": "string",
+                    "minLength": 2,
+                    "maxLength": 2
+                },
+                "salutation": {
+                    "enum": [
+                        "MS",
+                        "MR"
+                    ]
+                },
+                "first_name": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "last_name": {
+                    "type": "string",
+                    "minLength": 1
+                }
+            },
+            "required": [
+                "email",
+                "salutation",
+                "first_name",
+                "last_name",
+                "language"
+            ],
+            "additionalProperties": false
+        },
+        "internalRepresentative2": {
+            "type": "object",
+            "properties": {
+                "email": {
+                    "type": "string",
+                    "format": "email"
+                },
+                "language": {
+                    "type": "string",
+                    "minLength": 2,
+                    "maxLength": 2
+                },
+                "salutation": {
+                    "enum": [
+                        "MS",
+                        "MR"
+                    ]
+                },
+                "first_name": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "last_name": {
+                    "type": "string",
+                    "minLength": 1
+                }
+            },
+            "required": [
+                "email",
+                "salutation",
+                "first_name",
+                "last_name",
+                "language"
+            ],
+            "additionalProperties": false
+        },
+        "last_editor": {
+            "type": "string"
+        },
+        "desiredCooperationType": {
+            "enum": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5"
+            ]
+        },
+        "contractExpirationDate": {
+            "type": "string",
+            "format": "date"
+        }
+    },
+    "required": [
+        "dialogPartner",
+        "authorizedRepresentative1",
+        "sellingSpaceStaff",
+        "coop",
+        "invoice",
+        "invoiceAddress",
+        "parcelService",
+        "approver",
+        "internalRepresentative1",
+        "internalRepresentative2"
+    ],
+    "additionalProperties": false
+}
