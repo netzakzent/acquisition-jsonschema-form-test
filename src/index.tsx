@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.css';
-// import 'bootstrap/dist/js/bootstrap.js';
+import 'bootstrap/dist/css/bootstrap-theme.css';    // tslint:disable-line:ordered-imports
 
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
