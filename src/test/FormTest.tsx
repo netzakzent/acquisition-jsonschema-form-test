@@ -7,22 +7,31 @@ import { JSONSchema6 } from 'json-schema';
 import * as React from 'react';
 import Form from "react-jsonschema-form";
 
-enum Color { RED, GREEN, BLUE };
+enum Color { NONE, RED, GREEN, BLUE };
 
+
+// enumNames not json schema compliant
 // class Colors {
 //   public static readonly SCHEMA: JSONSchema6 = {
 //     type: "number",
 //     enum: [Color.RED, Color.GREEN, Color.BLUE],
-//     enumNames: ["Rot", "Grün", "Blau"]
+//     enumNames: ["Rot", "Grün", "Blau"]      // tslint:disable-line
 //   };
 // }
 
-class ColorsAnyOf {
+class ColorSchema {
   public static readonly SCHEMA: JSONSchema6 = {
-    title: "Farben",
+    title: "Farbe",
     type: "number",
     default: Color.GREEN,
     anyOf: [
+      {
+        type: "number",
+        title: "-",
+        enum: [
+          Color.NONE
+        ]
+      },      
       {
         type: "number",
         title: "Rot",
@@ -48,24 +57,24 @@ class ColorsAnyOf {
   };
 }
 
-// class MultipleChoices {
-//   public static readonly SCHEMA = {
-//     type: "array",
-//     title: "A multiple choices list",
-//     items: {
-//       type: "string",
-//       enum: ["foo", "bar", "fuzz", "qux"],
-//     },
-//     uniqueItems: true
-//   };
+class MultipleChoicesSchema {
+  public static readonly SCHEMA: JSONSchema6 = {
+    type: "array",
+    title: "A multiple choices list",
+    items: {
+      type: "string",
+      enum: ["foo", "bar", "fuzz", "qux"],
+    },
+    uniqueItems: true
+  };
 
-//   public static readonly UI_SCHEMA = {
-//     "ui:widget": "checkboxes",
-//     "ui:options": {
-//       inline: true
-//     }
-//   };
-// }
+  public static readonly UI_SCHEMA = {
+    "ui:widget": "checkboxes",
+    "ui:options": {
+      inline: true
+    }
+  };
+}
 
 const schema: JSONSchema6 = {
   properties: {
@@ -73,13 +82,15 @@ const schema: JSONSchema6 = {
       type: "boolean", title: "Done?", default: 'false',
       // enumNames: ['ja', 'nein']
     },
-    title: { type: "string", title: "Title", default: "A new task" },
+    title: { type: "string", title: "Title", default: "A new task", minLength: 2 },
     email: { type: "string", format: "email" },
     foo: { type: "boolean" },
     date: { type: "string", format: "date" },
-    colors: ColorsAnyOf.SCHEMA,
-    // multipleChoices: MultipleChoices.SCHEMA,
+    // color: Colors.SCHEMA,
+    colorAnyOf: ColorSchema.SCHEMA,
+    multipleChoices: MultipleChoicesSchema.SCHEMA,
     items: {
+      title: "Multiple Items",
       type: "array",
 
       items: {
@@ -101,7 +112,7 @@ const uiSchema = {
     "ui:widget": "radio" // could also be "select"
   },
   email: {
-    "ui:readonly": true
+    "ui:readonly": false
   },
   foo: {
     "ui:widget": "hidden"
@@ -113,7 +124,7 @@ const uiSchema = {
     }
   },
 
-  // multipleChoices: MultipleChoices.UI_SCHEMA,
+  multipleChoices: MultipleChoicesSchema.UI_SCHEMA,
 
   title: {
     "ui:autofocus": true,
@@ -141,7 +152,7 @@ const formData: IFormData = {
 const log = (type: string) => console.log.bind(console, type);
 const onSubmit = (e: IFormData) => console.log("Data submitted: ", e);
 const onCancel = (e: React.MouseEvent<HTMLButtonElement>) => console.log("Form cancelled: ");
-const onError = (errors: any[]) => console.log("I have", errors.length, "errors to fix");
+const onError = (errors: any[]) => console.log("I have", errors.length, "errors to fix", JSON.stringify(errors));
 
 export default class FormTest extends React.Component {
   public render() {
@@ -152,7 +163,7 @@ export default class FormTest extends React.Component {
         formData={formData}
         onChange={log("changed")}
         onSubmit={onSubmit}
-        onError={onError} >
+        onError={onError} liveValidate={true} >
 
         <div>
           <button type="submit">Submit</button>
