@@ -1,0 +1,10 @@
+{
+    "date": {
+        "ui:disabled": true
+    },
+    "ui:order": [      
+        "*"
+    ],
+    "ui:rootFieldId": "akquise"
+}
+  

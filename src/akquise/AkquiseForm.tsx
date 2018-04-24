@@ -5,17 +5,10 @@
 
 import * as React from 'react';
 import Form from "react-jsonschema-form";
-import * as schema from './formData.json';
 
-
-const uiSchema = {
-  customer: {
-    clientId: {
-      "ui:widget": "text",
-      "ui:readonly": false
-    },
-  },
-};
+import * as data from './recipient/formData.json';
+import * as schema from './recipient/schema.json';
+import * as uiSchema from './recipient/uiSchema.json';
 
 
 const log = (type: string) => console.log.bind(console, type);
@@ -27,6 +20,7 @@ export default class AkquiseForm extends React.Component {
   public render() {
     return (
       <Form
+        formData={data}
         schema={schema}
         uiSchema={uiSchema}
         onChange={log("changed")}
