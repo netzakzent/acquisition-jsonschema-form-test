@@ -1,0 +1,19 @@
+{
+    "properties": {
+        "salutation": {
+            "title": "Anrede"
+        },
+        "first_name": {
+            "title": "Vorname"
+        },
+        "last_name": {
+            "title": "Nachname"
+        },
+        "email_address": {
+            "title": "E-Mail Adresse "
+        },
+        "tvtgs": {
+            "title": "Tvgt"
+        }
+    }
+}

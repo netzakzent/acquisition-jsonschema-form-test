@@ -3,7 +3,8 @@ import './App.css';
 
 import { Jumbotron, PageHeader, Tab, Tabs } from 'react-bootstrap';
 
-import AkquiseForm from './akquise/AkquiseForm';
+import AkquiseFormRecipient from './akquise/recipient/AkquiseFormRecipient';
+import AkquiseFormSupervisor from './akquise/supervisor/AkquiseFormSupervisor';
 import FormTest from './test/FormTest'
 
 class App extends React.Component {
@@ -27,15 +28,19 @@ class App extends React.Component {
               </div>
             </Tab>
 
-            <Tab eventKey={2} title="Akquise Form">
-            <div className="container" >
-                <AkquiseForm />
+            <Tab eventKey={2} title="Akquise Form Recipient">
+              <div className="container" >
+                <AkquiseFormRecipient />
               </div>
-          </Tab>
+            </Tab>
 
-            <Tab eventKey={3} title="Tab 3" disabled={true}>
-              Tab 3 content
-          </Tab>
+
+            <Tab eventKey={3} title="Akquise Form Supervisor">
+              <div className="container" >
+                <AkquiseFormSupervisor />
+              </div>
+            </Tab>
+
           </Tabs>
 
         </div>
