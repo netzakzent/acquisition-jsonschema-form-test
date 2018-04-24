@@ -20,7 +20,7 @@ class App extends React.Component {
 
 
 
-          <Tabs defaultActiveKey={1} id="uncontrolled-tab-example">
+          <Tabs defaultActiveKey={2} id="uncontrolled-tab-example">
             <Tab eventKey={1} title="Basic Tests">
               <div className="container" >
                 <FormTest />
