@@ -1,0 +1,92 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Create new recipient",
+    "description": "Create new recipient",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "string",
+            "pattern": "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"
+        },
+        "status": {
+            "enum": [
+                "active",
+                "inactive"
+            ]
+        },
+        "salutation": {
+            "title": "Anrede",
+            "enum": [
+                "MS",
+                "MR"
+            ]
+        },
+        "first_name": {
+            "title": "Vorname",
+            "type": "string",
+            "minLength": 1
+        },
+        "last_name": {
+            "title": "Nachname",
+            "type": "string",
+            "minLength": 1
+        },
+        "email_address": {
+            "title": "E-Mail Adresse ",
+            "type": "string",
+            "format": "email"
+        },
+        "last_editor": {
+            "type": "string",
+            "format": "email"
+        },
+        "type": {
+            "title": "Typ",
+            "type": "string",
+            "enum": [
+                "css",
+                "signer"
+            ]
+        },
+        "languages": {
+            "title": "Sprache",
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "type": "string",
+                "enum": [
+                    "de",
+                    "en",
+                    "fr"
+                ]
+            },
+            "uniqueItems": true
+        },
+        "companies": {
+            "title": "Typ",
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "string"
+            },
+            "uniqueItems": true
+        },
+        "segments": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "string"
+            },
+            "uniqueItems": true
+        }
+    },
+    "required": [
+        "salutation",
+        "first_name",
+        "last_name",
+        "email_address",
+        "type",
+        "languages"
+    ],
+    "additionalProperties": false
+}

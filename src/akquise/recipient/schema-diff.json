@@ -1,0 +1,28 @@
+{
+    "properties": {
+        "salutation": {
+            "title": "Anrede"
+        },
+        "first_name": {
+            "title": "Vorname"
+        },
+        "last_name": {
+            "title": "Nachname"
+        },
+        "email_address": {
+            "title": "E-Mail Adresse "
+        },
+        "type": {
+            "title": "Typ"
+        },
+        "languages": {
+            "title": "Sprache"
+        },
+        "companies": {
+            "title": "Firma"
+        },
+        "segments": {
+            "title": "Divisions"
+        }
+    }
+}
