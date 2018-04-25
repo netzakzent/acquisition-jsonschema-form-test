@@ -6,7 +6,7 @@
 
 import { JSONSchema6 } from 'json-schema';
 import * as React from 'react';
-import FormCommon from '../../common/FormCommon';
+import CommonForm from '../../common/Common.form';
 
 // tslint:disable-next-line:no-var-requires
 const merge = require('deepmerge').default;
@@ -21,10 +21,10 @@ import * as uiSchema from './uiSchema.json';
 
 const schemaMerged = merge(schema, schemaDiff) as JSONSchema6;
 
-export default class AkquiseFormRecipient extends React.Component {
+export default class RecipientForm extends React.Component {
   public render() {
     return (
-      <FormCommon
+      <CommonForm
         className="form form-wide container-fluid container-fixed-lg"
         formData={data}
         schema={schemaMerged}

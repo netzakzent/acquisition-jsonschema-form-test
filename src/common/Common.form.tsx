@@ -14,7 +14,7 @@ export interface IState {
 }
 
 // tslint:disable-next-line:interface-name
-export interface FormCommonProps {
+export interface CommonFormProps {
   className?: string;
   formData: any;
   schema: JSONSchema6;
@@ -28,9 +28,10 @@ const onSubmit = (e: any) => console.log("Data submitted: ", e);
 const onCancel = (e: React.SyntheticEvent<HTMLButtonElement>) => console.log("Form cancelled: ");
 const onError = (errors: any[]) => console.log("I have", errors.length, "errors to fix");
 
-export default class AkquiseFormCommon extends React.Component<FormCommonProps, IState> {
 
-  public constructor(props: FormCommonProps) {
+export default class CommonForm extends React.Component<CommonFormProps, IState> {
+
+  public constructor(props: CommonFormProps) {
     super(props);
   }
 

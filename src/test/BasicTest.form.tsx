@@ -6,7 +6,7 @@
 import { JSONSchema6 } from 'json-schema';
 import * as React from 'react';
 
-import FormCommon from '../common/FormCommon';
+import CommonForm from '../common/Common.form';
 
 enum Color { NONE, RED, GREEN, BLUE };
 
@@ -187,10 +187,10 @@ const formData: IFormData = {
 };
 
 
-export default class FormTest extends React.Component {
+export default class BasicTestForm extends React.Component {
   public render() {
     return (
-      <FormCommon
+      <CommonForm
         schema={schema}
         uiSchema={uiSchema}
         formData={formData} liveValidate={true} />

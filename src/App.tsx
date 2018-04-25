@@ -3,10 +3,10 @@ import './App.css';
 
 import { Jumbotron, PageHeader, Tab, Tabs } from 'react-bootstrap';
 
-// import AkquiseFormCoopNegotiation from './akquise/coop-negotioation/AkquiseFormCoopNegotiation';
-import AkquiseFormRecipient from './akquise/recipient/AkquiseFormRecipient';
-import AkquiseFormSupervisor from './akquise/supervisor/AkquiseFormSupervisor';
-import FormTest from './test/FormTest'
+// import CoopNegotiationForm from './akquise/coop-negotioation/CoopNegotiation.form';
+import RecipientForm from './akquise/recipient/Recipient.form';
+import SupervisorForm from './akquise/supervisor/Supervisor.form';
+import BasicTestForm from './test/BasicTest.form'
 
 class App extends React.Component {
   public render() {
@@ -25,26 +25,26 @@ class App extends React.Component {
           <Tabs defaultActiveKey={2} id="uncontrolled-tab-example">
             <Tab eventKey={1} title="Basic Tests">
               <div className="container" >
-                <FormTest />
+                <BasicTestForm />
               </div>
             </Tab>
 
             <Tab eventKey={2} title="Akquise Form Recipient">
               <div className="container" >
-                <AkquiseFormRecipient />
+                <RecipientForm />
               </div>
             </Tab>
 
 
             <Tab eventKey={3} title="Akquise Form Supervisor">
               <div className="container" >
-                <AkquiseFormSupervisor />
+                <SupervisorForm />
               </div>
             </Tab>
 
  {/*            <Tab eventKey={3} title="Akquise Form Coop Negotiation">
               <div className="container" >
-                <AkquiseFormCoopNegotiation />
+                <CoopNegotiationForm />
               </div>
             </Tab> */}
 
