@@ -15,6 +15,9 @@ import * as schema from './schema.json';
 import * as uiSchema from './uiSchema.json';
 
 
+// NOTE: remove tvtgs.items because new items from schema-diff will be merged into
+delete (schema as any).properties.tvtgs.items;
+
 const schemaMerged = merge(schema, schemaDiff) as JSONSchema6;
 
 
