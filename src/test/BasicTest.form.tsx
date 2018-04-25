@@ -120,9 +120,9 @@ const schema: JSONSchema6 = {
       // enumNames: ['ja', 'nein']
     },
     title: { type: "string", title: "Title", default: "A new task", minLength: 2 },
-    email: { type: "string", format: "email" },
+    email: { type: "string", title: "Mail", format: "email" },
     foo: { type: "boolean" },
-    date: { type: "string", format: "date" },
+    date: { type: "string", title: "Date", format: "date" },
     // color: Colors.SCHEMA,
     colorAnyOf: ColorSchema.SCHEMA,
     multipleChoices: MultipleChoicesSchema.SCHEMA,
