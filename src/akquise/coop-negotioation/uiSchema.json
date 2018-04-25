@@ -1,5 +1,4 @@
 {
-    "ui:field": "layout",
     "id": {
         "ui:widget": "hidden"
     },
