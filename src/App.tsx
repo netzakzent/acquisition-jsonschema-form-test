@@ -3,10 +3,11 @@ import './App.css';
 
 import { Jumbotron, PageHeader, Tab, Tabs } from 'react-bootstrap';
 
-// import CoopNegotiationForm from './akquise/coop-negotioation/CoopNegotiation.form';
+import CoopNegotiationForm from './akquise/coop-negotioation/CoopNegotiation.form';
 import RecipientForm from './akquise/recipient/Recipient.form';
 import SupervisorForm from './akquise/supervisor/Supervisor.form';
-import BasicTestForm from './test/BasicTest.form'
+import BasicTestForm from './test/BasicTest.form';
+import NestedForm from './test/Nested.form';
 
 class App extends React.Component {
   public render() {
@@ -29,24 +30,31 @@ class App extends React.Component {
               </div>
             </Tab>
 
-            <Tab eventKey={2} title="Akquise Form Recipient">
+            <Tab eventKey={2} title="Nested Tests">
+              <div className="container" >
+                <NestedForm />
+              </div>
+            </Tab>
+            
+
+            <Tab eventKey={3} title="Akquise Form Recipient">
               <div className="container" >
                 <RecipientForm />
               </div>
             </Tab>
 
 
-            <Tab eventKey={3} title="Akquise Form Supervisor">
+            <Tab eventKey={4} title="Akquise Form Supervisor">
               <div className="container" >
                 <SupervisorForm />
               </div>
             </Tab>
 
- {/*            <Tab eventKey={3} title="Akquise Form Coop Negotiation">
+            <Tab eventKey={5} title="Akquise Form Coop Negotiation">
               <div className="container" >
                 <CoopNegotiationForm />
               </div>
-            </Tab> */}
+            </Tab>
 
           </Tabs>
 

@@ -21,7 +21,7 @@ import * as uiSchema from './uiSchema.json';
 
 const schemaMerged = merge(schema, schemaDiff) as JSONSchema6;
 
-export default class CoopNegotiation extends React.Component {
+export default class CoopNegotiationForm extends React.Component {
   public render() {
     return (
       <CommonForm
