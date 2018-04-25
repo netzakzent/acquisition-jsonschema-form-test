@@ -10,6 +10,7 @@ import CommonForm from '../common/Common.form';
 
 
 const schema: JSONSchema6 = {
+  "$schema": "http://json-schema.org/draft-06/schema#",
   "title": "A list of tasks",
   "type": "object",
   "required": [
