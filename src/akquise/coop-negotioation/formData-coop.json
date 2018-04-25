@@ -1,0 +1,30 @@
+{
+    "coop": {
+        "newType": "1",
+        "minimumRequirements": {
+            "matrixRange": 0,
+            "annualMinimumOrderValue": 5000
+        },
+        "contractAddons": {
+            "storeConstruction": false,
+            "contractDuration": "-"
+        },
+        "coopDiscount": "0%",
+        "paymentTerms": "10 Tage 4% Skonto",
+        "contract": {
+            "inceptionOfTreaty": "805"
+        },
+        "edi": {
+            "ars": true,
+            "noos": false,
+            "ediServicePricat": true,
+            "ediServiceDesadv": true,
+            "ediServiceSlsrpt": true,
+            "ediServiceInvrpt": true,
+            "ediServiceOrdchg": false,
+            "ediServiceOrdrsp": true
+        },
+        "coopDiscountComment": "",
+        "posManagerOrderPermission": false
+    }
+}

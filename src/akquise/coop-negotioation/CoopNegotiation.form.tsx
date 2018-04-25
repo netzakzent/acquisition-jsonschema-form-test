@@ -12,9 +12,9 @@ import CommonForm from '../../common/Common.form';
 const merge = require('deepmerge').default;
 
 
-import * as data from './formData.json';
+import * as data from './formData-coop.json';
+import * as schema from './schema-coop.json';
 import * as schemaDiff from './schema-diff.json';
-import * as schema from './schema.json';
 import * as uiSchema from './uiSchema.json';
 
 
