@@ -1,5 +1,4 @@
 {
-    "ui:field": "layout",
     "id": {
         "ui:widget": "hidden"
     },
@@ -10,22 +9,29 @@
         "ui:widget": "hidden"
     },
     
+
     "salutation": {
+        "ui:title": "Anrede",
         "classNames": "col-md-6"
     },
     "first_name": {
+        "ui:title": "Vorname",
         "classNames": "col-md-6"
     },
     "last_name": {
+        "ui:title": "Nachname",
         "classNames": "col-md-6"
     },
     "email_address": {
+        "ui:title": "E-Mail Adresse ",
         "classNames": "col-md-6"
     },
     "type": {
+        "ui:title": "Typ",
         "classNames": "col-md-6"
     },
     "languages": {
+        "ui:title": "Sprache",
         "classNames": "col-md-6"
     },
     "segments": {
@@ -33,6 +39,7 @@
         "ui:title": "Divisions-wl"
     },
     "companies": {
+        "ui:title": "Divisions",
         "classNames": "col-md-6"
     },
     "ui:rootFieldId": "akquiseRecipient",
