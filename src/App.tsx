@@ -8,6 +8,7 @@ import RecipientForm from './akquise/recipient/Recipient.form';
 import SupervisorForm from './akquise/supervisor/Supervisor.form';
 import BasicTestForm from './test/BasicTest.form';
 import DynamicForm from './test/Dynamic.form';
+import GroupingForm from './test/Grouping.form';
 import NestedForm from './test/Nested.form';
 
 class App extends React.Component {
@@ -24,7 +25,7 @@ class App extends React.Component {
 
 
 
-          <Tabs defaultActiveKey={2} id="uncontrolled-tab-example">
+          <Tabs defaultActiveKey={3} id="uncontrolled-tab-example">
             <Tab eventKey={1} title="Basic Tests">
               <div className="container" >
                 <BasicTestForm />
@@ -37,27 +38,33 @@ class App extends React.Component {
               </div>
             </Tab>
             
-            <Tab eventKey={3} title="Dynamic Tests">
+            <Tab eventKey={3} title="Grouping Tests">
+              <div className="container" >
+                <GroupingForm />
+              </div>
+            </Tab>
+
+            <Tab eventKey={4} title="Dynamic Tests">
               <div className="container" >
                 <DynamicForm />
               </div>
             </Tab>
           
 
-            <Tab eventKey={4} title="Akquise Form Recipient">
+            <Tab eventKey={5} title="Akquise Form Recipient">
               <div className="container" >
                 <RecipientForm />
               </div>
             </Tab>
 
 
-            <Tab eventKey={5} title="Akquise Form Supervisor">
+            <Tab eventKey={6} title="Akquise Form Supervisor">
               <div className="container" >
                 <SupervisorForm />
               </div>
             </Tab>
 
-            <Tab eventKey={6} title="Akquise Form Coop Negotiation">
+            <Tab eventKey={7} title="Akquise Form Coop Negotiation">
               <div className="container" >
                 <CoopNegotiationForm />
               </div>
