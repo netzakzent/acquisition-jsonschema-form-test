@@ -7,7 +7,7 @@ import * as React from 'react';
 // tslint:disable-next-line:no-var-requires
 const merge = require('deepmerge').default;
 
-import AkquiseFormCommon from '../AkquiseFormCommon';
+import FormCommon from '../../common/FormCommon';
 
 import * as data from './formData.json';
 import * as schemaDiff from './schema-diff.json';
@@ -24,7 +24,7 @@ const schemaMerged = merge(schema, schemaDiff) as JSONSchema6;
 export default class AkquiseFormSupervisor extends React.Component {
   public render() {
     return (
-        <AkquiseFormCommon
+        <FormCommon
           formData={data}
           schema={schemaMerged}
           uiSchema={uiSchema} liveValidate={true} />

@@ -13,7 +13,8 @@ export interface IState {
 
 }
 
-export interface IAkquiseFormCommonProps {
+// tslint:disable-next-line:interface-name
+export interface FormCommonProps {
   className?: string;
   formData: any;
   schema: JSONSchema6;
@@ -27,9 +28,9 @@ const onSubmit = (e: any) => console.log("Data submitted: ", e);
 const onCancel = (e: React.SyntheticEvent<HTMLButtonElement>) => console.log("Form cancelled: ");
 const onError = (errors: any[]) => console.log("I have", errors.length, "errors to fix");
 
-export default class AkquiseFormCommon extends React.Component<IAkquiseFormCommonProps, IState> {
+export default class AkquiseFormCommon extends React.Component<FormCommonProps, IState> {
 
-  public constructor(props: IAkquiseFormCommonProps) {
+  public constructor(props: FormCommonProps) {
     super(props);
   }
 
@@ -46,9 +47,9 @@ export default class AkquiseFormCommon extends React.Component<IAkquiseFormCommo
         onError={onError} 
         liveValidate={this.props.liveValidate} >
 
-        <div>
-          <button type="submit">Submit</button>
-          <button type="button" onClick={onCancel}>Cancel</button>
+        <div className="btn-group">
+          <button className="btn btn-primary" type="submit">Submit</button>
+          <button  className="btn" type="button" onClick={onCancel}>Cancel</button>
         </div>
       </Form>
     );

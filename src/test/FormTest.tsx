@@ -5,7 +5,8 @@
 
 import { JSONSchema6 } from 'json-schema';
 import * as React from 'react';
-import Form from "react-jsonschema-form";
+
+import FormCommon from '../common/FormCommon';
 
 enum Color { NONE, RED, GREEN, BLUE };
 
@@ -27,7 +28,7 @@ class ColorSchema {
     anyOf: [
       {
         type: "number",
-        title: "-",
+        title: "-keine-",
         enum: [
           Color.NONE
         ]
@@ -54,6 +55,10 @@ class ColorSchema {
         ]
       }
     ]
+  };
+
+  public static readonly UI_SCHEMA = {
+    "ui:enumDisabled": [Color.GREEN]
   };
 }
 
@@ -156,6 +161,7 @@ const uiSchema = {
     }
   },
 
+  colorAnyOf: ColorSchema.UI_SCHEMA,
   multipleChoices: MultipleChoicesSchema.UI_SCHEMA,
 
   title: {
@@ -181,27 +187,13 @@ const formData: IFormData = {
 };
 
 
-const log = (type: string) => console.log.bind(console, type);
-const onSubmit = (e: IFormData) => console.log("Data submitted: ", e);
-const onCancel = (e: React.MouseEvent<HTMLButtonElement>) => console.log("Form cancelled: ");
-const onError = (errors: any[]) => console.log("I have", errors.length, "errors to fix", JSON.stringify(errors));
-
 export default class FormTest extends React.Component {
   public render() {
     return (
-      <Form
+      <FormCommon
         schema={schema}
         uiSchema={uiSchema}
-        formData={formData}
-        onChange={log("changed")}
-        onSubmit={onSubmit}
-        onError={onError} liveValidate={true} >
-
-        <div>
-          <button type="submit">Submit</button>
-          <button type="button" onClick={onCancel}>Cancel</button>
-        </div>
-      </Form>
+        formData={formData} liveValidate={true} />
     );
   }
 }

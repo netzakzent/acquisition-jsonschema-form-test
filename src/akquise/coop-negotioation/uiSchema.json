@@ -1,4 +1,5 @@
 {
+    "ui:field": "layout",
     "id": {
         "ui:widget": "hidden"
     },
@@ -8,20 +9,19 @@
     "last_editor": {
         "ui:widget": "hidden"
     },
-
-
+    
     "salutation": {
-        "classNames": "form-group-default form-group-default-select2 col-md-6"
+        "classNames": "col-md-4"
     },
     "first_name": {
-        "classNames": "col-md-6"
+        "classNames": "col-md-4"
     },
     "last_name": {
-        "classNames": "col-md-6"
+        "classNames": "col-md-4"
     },
     "email_address": {
-        "classNames": "col-md-6"
+        "classNames": "col-md-4"
     },
-    "ui:rootFieldId": "akquiseSupervisor",
+    "ui:rootFieldId": "akquiseRecipient",
     "classNames": "container-fluid container-fixed-lg col-md-12"
 }
