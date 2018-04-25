@@ -8,11 +8,20 @@
     "last_editor": {
         "ui:widget": "hidden"
     },
-    "date": {
-        "ui:disabled": true
+
+
+    "salutation": {
+        "classNames": "form-group-default form-group-default-select2 col-md-6"
     },
-    "ui:order": [
-        "*"
-    ],
-    "ui:rootFieldId": "akquise"
+    "first_name": {
+        "classNames": "col-md-6"
+    },
+    "last_name": {
+        "classNames": "col-md-6"
+    },
+    "email_address": {
+        "classNames": "col-md-6"
+    },
+    "ui:rootFieldId": "akquise",
+    "classNames": "container-fluid container-fixed-lg col-md-12"
 }

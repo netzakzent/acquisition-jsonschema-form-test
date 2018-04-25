@@ -24,7 +24,7 @@ export default class AkquiseFormSupervisor extends React.Component {
         <AkquiseFormCommon
           formData={data}
           schema={schemaMerged}
-          uiSchema={uiSchema} />
+          uiSchema={uiSchema} liveValidate={true} />
     );
     
   }

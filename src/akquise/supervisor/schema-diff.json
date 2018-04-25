@@ -13,7 +13,26 @@
             "title": "E-Mail Adresse "
         },
         "tvtgs": {
-            "title": "Tvgt"
+            "title": "Tvgt",
+            "items": {
+                "type": "string",
+                "anyOf": [
+                    {
+                        "type": "string",
+                        "title": "000001 - HH-s.O RL Women 1 (DE)",
+                        "enum": [
+                            "000001"
+                        ]
+                    },
+                    {
+                        "type": "string",
+                        "title": "000002 - HH-s.O RL Women 2 (DE)",
+                        "enum": [
+                            "000002"
+                        ]
+                    }
+                ]
+            }
         }
     }
 }

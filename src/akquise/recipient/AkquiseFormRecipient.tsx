@@ -24,11 +24,12 @@ const schemaMerged = merge(schema, schemaDiff) as JSONSchema6;
 export default class AkquiseFormRecipient extends React.Component {
   public render() {
     return (
-        <AkquiseFormCommon
-          formData={data}
-          schema={schemaMerged}
-          uiSchema={uiSchema} />
+      <AkquiseFormCommon
+        className="form form-wide container-fluid container-fixed-lg"
+        formData={data}
+        schema={schemaMerged}
+        uiSchema={uiSchema} liveValidate={true} />
     );
-    
+
   }
 }

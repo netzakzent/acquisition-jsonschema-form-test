@@ -1,4 +1,5 @@
 {
+    "ui:field": "layout",
     "id": {
         "ui:widget": "hidden"
     },
@@ -8,11 +9,19 @@
     "last_editor": {
         "ui:widget": "hidden"
     },
-    "date": {
-        "ui:disabled": true
+    
+    "salutation": {
+        "classNames": "col-md-4"
     },
-    "ui:order": [
-        "*"
-    ],
-    "ui:rootFieldId": "akquise"
+    "first_name": {
+        "classNames": "col-md-4"
+    },
+    "last_name": {
+        "classNames": "col-md-4"
+    },
+    "email_address": {
+        "classNames": "col-md-4"
+    },
+    "ui:rootFieldId": "akquiseRecipient",
+    "classNames": "container-fluid container-fixed-lg col-md-12"
 }

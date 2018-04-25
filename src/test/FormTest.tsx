@@ -57,13 +57,45 @@ class ColorSchema {
   };
 }
 
+
 class MultipleChoicesSchema {
   public static readonly SCHEMA: JSONSchema6 = {
     type: "array",
     title: "A multiple choices list",
     items: {
       type: "string",
-      enum: ["foo", "bar", "fuzz", "qux"],
+      // enum: ["foo", "bar", "fuzz", "qux"],
+      // enum alternative:
+      anyOf: [
+        {
+          type: "string",
+          title: "Foo",
+          enum: [
+            "foo"
+          ]
+        },      
+        {
+          type: "string",
+          title: "Bar",
+          enum: [
+            "bar"
+          ]
+        },
+        {
+          type: "string",
+          title: "Fuzz",
+          enum: [
+            "fuzz"
+          ]
+        },
+        {
+          type: "string",
+          title: "Qux",
+          enum: [
+            "qux"
+          ]
+        }
+      ]
     },
     uniqueItems: true
   };
