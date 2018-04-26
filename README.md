@@ -105,7 +105,8 @@ Feldvalidierung ist wie aktuell implementiert nicht Stand der Technik (einige Is
 
 ## Mögliche Alternativen
 
-* direkte Implementierung über React-Komponenten in SPA
+* Implementierung über React-Komponenten als SPA und direkte Umsetzung der Regeln in
+  javascript/typescript in den Container-Komponenten 
 * react-jsonschema-form dediziert nachbauen
   * React-Konponenten für Pflege/Anzeige der individuellen Felder (Input, Checkbox, ...)
   * Form-Komponente mit dynamischem Aufbau über Schema
