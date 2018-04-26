@@ -54,6 +54,13 @@ Die Validierung kann
 
  ## Demo-Anwendung
 
+ Anmerkung: statt `yarn` kann auch `npm` direkt verwendet werden.
+
+ * Build: `yarn install`
+ * Test: `yarn start`
+
+### Beschreibung
+
  In der Anwendung wurde diverse Konfigurationen umgesetzt. Einige ohne direkten Bezug auf akquise-app und einige mit direktem Bezug auf einige Formulare von akquise-app.
 
  * src/test
@@ -84,7 +91,9 @@ Die Validierung kann
 ### Nachteile
 
 * stark mit [bootstrap](https://getbootstrap.com/) gekoppelt; andere Styling Library kann nicht einfach verwendet werden
-* Fehlerbehandlung / Anzeige: Validierung direkt auf Feldebene direkt bei Eingabe, nicht erst beim Verlassen des Felds
+* Fehlerbehandlung / Anzeige
+  * Validierung direkt auf Feldebene direkt bei Eingabe, nicht erst beim Verlassen des Felds
+  * Anzeige auch bei initialer Darstellung ohne Eingabe ("pristine" Status nicht berücksichtigt)
 * custom widgets müssen erstellt werden (z.B. für die Pflege von multi-select Listen), da Standardwidgets nicht ausreichen
 
 ## Zusammenfassung
