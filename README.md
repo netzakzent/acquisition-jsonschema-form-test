@@ -102,21 +102,24 @@ Falls `bootstrap` als CSS-Library nicht verwendet werden kann, scheidet `react-j
 
 Feldvalidierung ist wie aktuell implementiert nicht Stand der Technik (einige Issues beziehen siech auf die Problematik) und nicht wie bei `akquise-app`.
 
+Layout, das stark von dem Schema abweicht (z.B. coop negotiation: customer -> segment) praktisch nicht möglich.
+
 
 ## Mögliche Alternativen
 
 * Implementierung über React-Komponenten als SPA und direkte Umsetzung der Regeln in
   javascript/typescript in den Container-Komponenten 
-* react-jsonschema-form dediziert nachbauen
+* react-jsonschema-form dediziert nachbauen (eher nicht)
   * React-Konponenten für Pflege/Anzeige der individuellen Felder (Input, Checkbox, ...)
   * Form-Komponente mit dynamischem Aufbau über Schema
 
 
-  ## Fragen
+## Fragen
 
-  * Coop negotiation: unklar Rollenverteilung zwischen Json und Schema
-    * z.B. customer:
-      * keine Daten im Schema
-      * mögliche Ausprägungen im Schema
+* Coop negotiation: unklar Rollenverteilung zwischen Json und Schema
+  * z.B. customer:
+    * keine Daten im Json
+    * mögliche Ausprägungen im Schema
+  * Erwartung: immer Daten im Json (wenn vorhanden), passend zum Schema
 
-    * Erwartung: immer Daten im Json (wenn vorhanden), passend zum Schema
+* was passiert beim (zwischen-) Speichern? (Auswertung von Json im Server)
