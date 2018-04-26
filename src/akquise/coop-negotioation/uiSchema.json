@@ -1,26 +1,30 @@
 {
-    "id": {
-        "ui:widget": "hidden"
+    "customer": {
+        "ui:title": "POS/Kontakt Details",
+        "name": {
+            "ui:title": "Name"
+        },
+        "clientId": {
+            "ui:title": "SAP KUNDENNUMMER/TOBAS KUNDENNUMMER"
+        },
+   
+        "displayClientId": {
+            "ui:widget": "hidden"
+        },
+        "pos": {
+            "ui:widget": "hidden"
+        },
+        "segment": {
+           
+            "name": {
+                "ui:title": "DIVISION",
+                "classNames": "col-md-4"
+            },
+            "id": {
+                "ui:widget": "hidden"
+            }
+        }
     },
-    "status": {
-        "ui:widget": "hidden"
-    },
-    "last_editor": {
-        "ui:widget": "hidden"
-    },
-    
-    "salutation": {
-        "classNames": "col-md-4"
-    },
-    "first_name": {
-        "classNames": "col-md-4"
-    },
-    "last_name": {
-        "classNames": "col-md-4"
-    },
-    "email_address": {
-        "classNames": "col-md-4"
-    },
-    "ui:rootFieldId": "akquiseRecipient",
-    "classNames": "container-fluid container-fixed-lg col-md-12"
+    "ui:rootFieldId": "akquiseCoopNegotiation",
+    "classNames": "col-md-12"
 }

@@ -4,223 +4,23 @@
     "description": "Coop negotiation between SR and customer",
     "type": "object",
     "properties": {
+       
         "coop": {
+            
             "oneOf": [
-                {
-                    "type": "object",
-                    "title": "Multilabel-Partner",
+                {                  
+                    "title": "Multilabel-Partner",               
                     "properties": {
+                      
                         "newType": {
-                            "enum": [
-                                "1"
-                            ]
-                        },
-                        "minimumRequirements": {
-                            "type": "object",
-                            "properties": {
-                                "matrixRange": {
-                                    "enum": [
-                                        0
-                                    ]
-                                },
-                                "annualMinimumOrderValue": {
-                                    "type": "number",
-                                    "minimum": 5000
-                                }
-                            },
-                            "required": [
-                                "annualMinimumOrderValue"
-                            ],
-                            "additionalProperties": false
-                        },
-                        "coopDiscount": {
-                            "type": "string",
-                            "pattern": "^[\\d]+([\\.,]{1,1}[\\d]{1,2})?%$",
-                            "default": "0%"
-                        },
-                        "coopDiscountComment": {
                             "type": "string"
-                        },
-                        "paymentTerms": {
-                            "type": "string",
-                            "minLength": 1,
-                            "default": "10 Tage 4% Skonto"
-                        },
-                        "paymentTermsComment": {
-                            "type": "string"
-                        },
-                        "posManagerOrderPermission": {
-                            "enum": [
-                                true,
-                                false
-                            ]
-                        },
-                        "contract": {
-                            "type": "object",
-                            "properties": {
-                                "inceptionOfTreaty": {
-                                    "type": "string",
-                                    "pattern": "^[0-9]((0[0-9])|(1[0-2]))$"
-                                }
-                            },
-                            "required": [
-                                "inceptionOfTreaty"
-                            ],
-                            "additionalProperties": false
-                        },
-                        "contractAddons": {
-                            "type": "object",
-                            "properties": {
-                                "storeConstruction": {
-                                    "enum": [
-                                        false
-                                    ]
-                                },
-                                "contractDuration": {
-                                    "type": "string",
-                                    "pattern": "^(([\\d]+)|(-))$",
-                                    "default": "-"
-                                },
-                                "contractDurationComment": {
-                                    "type": "string"
-                                }
-                            },
-                            "required": [
-                                "storeConstruction"
-                            ],
-                            "additionalProperties": false
-                        },
-                        "edi": {
-                            "oneOf": [
-                                {
-                                    "type": "object",
-                                    "properties": {
-                                        "ars": {
-                                            "enum": [
-                                                true
-                                            ]
-                                        },
-                                        "noos": {
-                                            "enum": [
-                                                false
-                                            ]
-                                        },
-                                        "ediServicePricat": {
-                                            "enum": [
-                                                true
-                                            ]
-                                        },
-                                        "ediServiceDesadv": {
-                                            "enum": [
-                                                true
-                                            ]
-                                        },
-                                        "ediServiceSlsrpt": {
-                                            "enum": [
-                                                true
-                                            ]
-                                        },
-                                        "ediServiceInvrpt": {
-                                            "enum": [
-                                                true,
-                                                false
-                                            ]
-                                        },
-                                        "ediServiceOrdchg": {
-                                            "enum": [
-                                                true,
-                                                false
-                                            ]
-                                        },
-                                        "ediServiceOrdrsp": {
-                                            "enum": [
-                                                true,
-                                                false
-                                            ]
-                                        }
-                                    },
-                                    "required": [
-                                        "ars",
-                                        "noos",
-                                        "ediServicePricat",
-                                        "ediServiceDesadv",
-                                        "ediServiceSlsrpt",
-                                        "ediServiceInvrpt",
-                                        "ediServiceOrdchg",
-                                        "ediServiceOrdrsp"
-                                    ],
-                                    "additionalProperties": false
-                                },
-                                {
-                                    "type": "object",
-                                    "properties": {
-                                        "ars": {
-                                            "enum": [
-                                                false
-                                            ]
-                                        },
-                                        "noos": {
-                                            "enum": [
-                                                false
-                                            ]
-                                        },
-                                        "ediServicePricat": {
-                                            "enum": [
-                                                true,
-                                                false
-                                            ]
-                                        },
-                                        "ediServiceDesadv": {
-                                            "enum": [
-                                                true,
-                                                false
-                                            ]
-                                        },
-                                        "ediServiceSlsrpt": {
-                                            "enum": [
-                                                true,
-                                                false
-                                            ]
-                                        },
-                                        "ediServiceInvrpt": {
-                                            "enum": [
-                                                true,
-                                                false
-                                            ]
-                                        },
-                                        "ediServiceOrdchg": {
-                                            "enum": [
-                                                true,
-                                                false
-                                            ]
-                                        },
-                                        "ediServiceOrdrsp": {
-                                            "enum": [
-                                                true,
-                                                false
-                                            ]
-                                        }
-                                    },
-                                    "required": [
-                                        "ars",
-                                        "noos",
-                                        "ediServicePricat",
-                                        "ediServiceDesadv",
-                                        "ediServiceSlsrpt",
-                                        "ediServiceInvrpt",
-                                        "ediServiceOrdchg",
-                                        "ediServiceOrdrsp"
-                                    ],
-                                    "additionalProperties": false
-                                }
-                            ]
                         }
                     }
                 }
             ]
         }
     },
-    "required": [       
+    "required": [
         "coop"
     ],
     "additionalProperties": false

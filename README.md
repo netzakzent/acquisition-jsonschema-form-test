@@ -41,7 +41,7 @@ Die Library ist stark mit [bootstrap](https://getbootstrap.com/) gekoppelt.
 
 ## Anpassungsmöglichkeiten
 
-
+Custom fileds, custom widgets ... TODO
 
 ## Validierung
 
@@ -110,3 +110,13 @@ Feldvalidierung ist wie aktuell implementiert nicht Stand der Technik (einige Is
 * react-jsonschema-form dediziert nachbauen
   * React-Konponenten für Pflege/Anzeige der individuellen Felder (Input, Checkbox, ...)
   * Form-Komponente mit dynamischem Aufbau über Schema
+
+
+  ## Fragen
+
+  * Coop negotiation: unklar Rollenverteilung zwischen Json und Schema
+    * z.B. customer:
+      * keine Daten im Schema
+      * mögliche Ausprägungen im Schema
+
+    * Erwartung: immer Daten im Json (wenn vorhanden), passend zum Schema

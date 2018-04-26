@@ -1,0 +1,290 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Coop Negotiation",
+    "description": "Coop negotiation between SR and customer",
+    "type": "object",
+    "properties": {
+        "customer": {
+            "type": "object",
+            "properties": {
+                "clientId": {
+                    "enum": [
+                        "17c907b9-5ab7-4be8-a22d-5047f9fbfff2"
+                    ]
+                },
+                "displayClientId": {
+                    "enum": [
+                        "17c907b9-5ab7-4be8-a22d-5047f9fbfff2"
+                    ]
+                },
+                "pos": {
+                    "enum": [
+                        ""
+                    ]
+                },
+                "name": {
+                    "enum": [
+                        "Allgemeine Warenvertriebs-GmbH "
+                    ]
+                },
+                "segment": {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "enum": [
+                                "66"
+                            ]
+                        },
+                        "name": {
+                            "enum": [
+                                "s.O RED LABEL Girls"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "id",
+                        "name"
+                    ],
+                    "additionalProperties": false
+                },
+                "address": {
+                    "type": "object",
+                    "properties": {
+                        "street": {
+                            "enum": [
+                                "Steinweg 5"
+                            ]
+                        },
+                        "zipCode": {
+                            "enum": [
+                                "99974"
+                            ]
+                        },
+                        "city": {
+                            "enum": [
+                                "Mühlhausen"
+                            ]
+                        },
+                        "deliveryDistrict": {
+                            "enum": [
+                                ""
+                            ]
+                        },
+                        "countryKey": {
+                            "enum": [
+                                "DE"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "street",
+                        "zipCode",
+                        "city",
+                        "countryKey"
+                    ],
+                    "additionalProperties": false
+                },
+                "countryKey": {
+                    "enum": [
+                        "DE"
+                    ]
+                },
+                "invoiceCustomerNumber": {
+                    "enum": [
+                        "17c907b9-5ab7-4be8-a22d-5047f9fbfff2"
+                    ]
+                },
+                "debitorAccount": {
+                    "enum": [
+                        ""
+                    ]
+                },
+                "edi": {
+                    "enum": [
+                        false
+                    ]
+                },
+                "ars": {
+                    "enum": [
+                        false
+                    ]
+                },
+                "noos": {
+                    "enum": [
+                        false
+                    ]
+                },
+                "digitalEdiInvoice": {
+                    "enum": [
+                        false
+                    ]
+                },
+                "pdfInvoice": {
+                    "enum": [
+                        false
+                    ]
+                },
+                "pdfInvoiceEmail": {
+                    "enum": [
+                        ""
+                    ]
+                },
+                "shopfittingExists": {
+                    "enum": [
+                        false
+                    ]
+                },
+                "shopfittingConcept": {
+                    "enum": [
+                        ""
+                    ]
+                },
+                "shopfittingOpening": {
+                    "enum": [
+                        ""
+                    ]
+                },
+                "shopfittingAreaDimension": {
+                    "enum": [
+                        ""
+                    ]
+                },
+                "purchasingUnion": {
+                    "enum": [
+                        "-"
+                    ]
+                },
+                "hasPurchasingUnion": {
+                    "enum": [
+                        false
+                    ]
+                },
+                "hasSepa": {
+                    "enum": [
+                        false
+                    ]
+                },
+                "email": {
+                    "enum": [
+                        ""
+                    ]
+                },
+                "coopType": {
+                    "enum": [
+                        ""
+                    ]
+                },
+                "planedNewCoopType": {
+                    "enum": [
+                        " - "
+                    ]
+                },
+                "discount": {
+                    "enum": [
+                        "0%"
+                    ]
+                },
+                "paymentTerms": {
+                    "enum": [
+                        ""
+                    ]
+                },
+                "ediServicePricat": {
+                    "enum": [
+                        false
+                    ]
+                },
+                "ediServiceDesadv": {
+                    "enum": [
+                        false
+                    ]
+                },
+                "ediServiceSlsrpt": {
+                    "enum": [
+                        null
+                    ]
+                },
+                "ediServiceInvrpt": {
+                    "enum": [
+                        null
+                    ]
+                },
+                "ediServiceOrdchg": {
+                    "enum": [
+                        null
+                    ]
+                },
+                "ediServiceOrdrsp": {
+                    "enum": [
+                        false
+                    ]
+                },
+                "parcelServiceDpdAvailable": {
+                    "enum": [
+                        true
+                    ]
+                },
+                "hasSapPos": {
+                    "enum": [
+                        false
+                    ]
+                },
+                "sap": {
+                    "type": "object",
+                    "properties": {
+                        "area": {
+                            "enum": [
+                                ""
+                            ]
+                        },
+                        "subDivision": {
+                            "enum": [
+                                ""
+                            ]
+                        },
+                        "consigneeId": {
+                            "enum": [
+                                ""
+                            ]
+                        },
+                        "contractingAuthorityId": {
+                            "enum": [
+                                ""
+                            ]
+                        },
+                        "contractingAuthorityName": {
+                            "enum": [
+                                ""
+                            ]
+                        },
+                        "displayContractingAuthority": {
+                            "enum": [
+                                ""
+                            ]
+                        }
+                    },
+                    "required": [
+                        "consigneeId",
+                        "area",
+                        "subDivision"
+                    ],
+                    "additionalProperties": false
+                }
+            },
+            "additionalProperties": false
+        }
+    },
+    "required": [
+        "dialogPartner",
+        "authorizedRepresentative1",
+        "sellingSpaceStaff",
+        "coop",
+        "invoice",
+        "invoiceAddress",
+        "parcelService",
+        "approver",
+        "internalRepresentative1",
+        "internalRepresentative2"
+    ],
+    "additionalProperties": false
+}
