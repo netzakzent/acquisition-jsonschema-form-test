@@ -1,4 +1,4 @@
-import { browser, element, ElementArrayFinder, ElementFinder } from 'protractor';
+import { browser, element, ElementArrayFinder, ElementFinder, promise } from 'protractor';
 
 import { Page } from './page.po';
 
@@ -22,6 +22,23 @@ export class AppPage extends Page {
 
 
   public getTabs(): ElementArrayFinder {
-    return element.all(this.byCss('#uncontrolled-tab-example > ul > li'));
+    return element.all(this.byCss('#uncontrolled-tab-example > ul > li > a'));
   }
+
+  
+  public getTab(name: string): promise.Promise<Element> {
+    const tabs = this.findElementsByText(this.getTabs(), name);
+    return new promise.Promise<Element>((resolve, reject) => {
+      tabs.then((items) => {
+        if (items.length <= 0) {
+          resolve(undefined);
+        } else if (items.length !== 1) {
+          throw new Error(``);
+        } else {
+          resolve(items[0]);
+        }
+      });
+    });    
+  }
+
 }
