@@ -8,7 +8,10 @@ exports.config = {
 
   suites: {
     home: [
-      './e2e/**/home/home.e2e-spec.ts'
+      './e2e/**/home/*.e2e-spec.ts'
+    ],
+    akquise: [
+      './e2e/**/akquise/*.e2e-spec.ts'
     ],
   },
 
@@ -19,7 +22,7 @@ exports.config = {
         //"--headless", 
         // "--disable-gpu",
         "--window-size=800,600",
-        '--no-sandbox'    // linux
+        // '--no-sandbox'    // linux
       ]
     }
   },

@@ -22,7 +22,7 @@ class LabeledTextField extends React.Component<ILabeledTextProps, ILabeledTextSt
 
   public render() {
     return (
-      <Form.Field required={this.props.required}>
+      <Form.Field required={this.props.required} id={this.props.label}>
         <label>{this.props.label}</label>
         <Input fluid={this.props.fluid} placeholder={this.props.placeholder} value={this.props.value} onChange={this.handleChange} />
       </Form.Field>     
