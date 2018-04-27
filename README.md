@@ -69,6 +69,7 @@ Die Validierung kann
    * GroupingForm
    * NestedForm
  * src/akquise
+   * component-test (Test mit custom components und semantic ui)
    * coop-negotioation
    * recipient
    * supervisor
