@@ -11,7 +11,7 @@ export class AppPage extends Page {
     super(selector);
   }
 
-  public navigateTo() {
+  public navigateTo(): promise.Promise<any> {
     browser.waitForAngularEnabled(false);
     return browser.get('/');
   }
@@ -25,11 +25,11 @@ export class AppPage extends Page {
     return element.all(this.byCss('#uncontrolled-tab-example > ul > li > a'));
   }
 
-  
-  public getTab(name: string): promise.Promise<Element> {
+
+  public getTab(name: string): promise.Promise<ElementFinder> {
     const tabs = this.findElementsByText(this.getTabs(), name);
-    return new promise.Promise<Element>((resolve, reject) => {
-      tabs.then((items) => {
+    return new promise.Promise<ElementFinder>((resolve, reject) => {
+      tabs.then((items: ElementFinder[]) => {
         if (items.length <= 0) {
           resolve(undefined);
         } else if (items.length !== 1) {

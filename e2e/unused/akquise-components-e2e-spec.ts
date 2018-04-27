@@ -1,13 +1,13 @@
-import { AppPage } from './pages/app.po';
+import { AkquiseComponentsPage } from './akquise-components.po';
 
 describe('start page', () => {
-  let page: AppPage;
+  let page: AkquiseComponentsPage;
 
   beforeEach(() => {
-    page = new AppPage('#root');
+    page = new AkquiseComponentsPage('#root #uncontrolled-tab-example > ul > li > a[aria-controls=\'uncontrolled-tab-example-pane-3\']');
   });
 
-  it('should find page head', () => {
+  it('should find tab page', () => {
     page.navigateTo();
     expect(page.getPageHeader()).not.toBeNull();
   });
