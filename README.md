@@ -124,3 +124,46 @@ Layout, das stark von dem Schema abweicht (z.B. coop negotiation: customer -> se
   * Erwartung: immer Daten im Json (wenn vorhanden), passend zum Schema
 
 * was passiert beim (zwischen-) Speichern? (Auswertung von Json im Server)
+
+
+## Support für protractor
+
+* Packages installieren
+```sh
+$ yarn add --dev protractor
+$ yarn add --dev jasmine-core jasmine-spec-reporter
+$ yarn add --dev karma karma-chrome-launcher karma-coverage-istanbul-reporter karma-jasmine karma-jasmine-html-reporter
+$ yarn add --dev ts-node
+```
+
+* in package.json ergänzen:
+
+```json
+...
+"scripts": {
+...
+  "e2e": "node --inspect-brk bin/protractor protractor.conf.js",
+  "webdriver": "webdriver-manager update"
+```
+
+* Konflikt mit @types/jasmine beheben
+```sh
+$ yarn remove @types/jest
+```
+
+* folgende Files/Verzeichnisse in tsconfig.json ausschließen:
+```js
+"exclude": [
+  ...
+  "e2e",
+  "./protractor.conf.js"
+]
+``` 
+* protractor.conf.js ergänzen
+
+* Tests durchführen
+
+```sh
+$ yarn webdriver    # webdriver manager download/aktualisiern
+$ yarn e2e          # e2e Tests starten
+```
