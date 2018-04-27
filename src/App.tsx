@@ -3,6 +3,7 @@ import './App.css';
 
 import { Jumbotron, PageHeader, Tab, Tabs } from 'react-bootstrap';
 
+import TestForm from './akquise/component-test/test.form';
 import CoopNegotiationForm from './akquise/coop-negotioation/CoopNegotiation.form';
 import RecipientForm from './akquise/recipient/Recipient.form';
 import SupervisorForm from './akquise/supervisor/Supervisor.form';
@@ -50,21 +51,27 @@ class App extends React.Component {
               </div>
             </Tab>
           
+            <Tab eventKey={5} title="Akquise Components">
+              <div className="container" >
+                <TestForm />
+              </div>
+            </Tab>
+     
 
-            <Tab eventKey={5} title="Akquise Form Recipient">
+            <Tab eventKey={6} title="Akquise Form Recipient">
               <div className="container" >
                 <RecipientForm />
               </div>
             </Tab>
 
 
-            <Tab eventKey={6} title="Akquise Form Supervisor">
+            <Tab eventKey={7} title="Akquise Form Supervisor">
               <div className="container" >
                 <SupervisorForm />
               </div>
             </Tab>
 
-            <Tab eventKey={7} title="Akquise Form Coop Negotiation">
+            <Tab eventKey={8} title="Akquise Form Coop Negotiation">
               <div className="container" >
                 <CoopNegotiationForm />
               </div>
