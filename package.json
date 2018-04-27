@@ -13,7 +13,7 @@
     "semantic-ui-css": "^2.3.1",
     "semantic-ui-react": "^0.79.1"
   },
-  "scripts": {
+  "scripts": {   
     "start": "react-scripts-ts start",
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",

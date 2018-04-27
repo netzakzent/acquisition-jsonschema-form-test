@@ -12,7 +12,7 @@ exports.config = {
     'browserName': 'chrome'
   },
   directConnect: true,
-  baseUrl: 'localhost://akquise.local',
+  baseUrl: 'http://localhost:3000',
   framework: 'jasmine',
   jasmineNodeOpts: {
     showColors: true,
