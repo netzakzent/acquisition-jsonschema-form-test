@@ -3,20 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "bootstrap": "3",
+    "ajv": "^6.4.0",
     "deepmerge": "^2.1.0",
     "react": "^16.3.2",
-    "react-bootstrap": "^0.32.1",
     "react-dom": "^16.3.2",
-    "react-jsonschema-form": "^1.0.3",
     "react-scripts-ts": "2.15.1",
     "semantic-ui-css": "^2.3.1",
     "semantic-ui-react": "^0.79.1"
   },
-  "scripts": {   
+  "scripts": {
     "start": "react-scripts-ts start",
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
+    "prettier": "node_modules/.bin/prettier --single-quote --arrow-parens always --print-width 120 --tab-width 4 --write 'src/**/*.{ts,tsx}'",
+    "tslint": "node_modules/.bin/tslint -c tslint.json 'src/**/*.{ts,tsx}'",
+    "tslint-fix": "node_modules/.bin/tslint -c tslint.json --fix 'src/**/*.{ts,tsx}'",
     "eject": "react-scripts-ts eject",
     "e2e": "protractor protractor.conf.js",
     "webdriver": "webdriver-manager update"
