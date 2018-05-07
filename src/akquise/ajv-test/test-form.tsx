@@ -1,6 +1,6 @@
 import * as Ajv from 'ajv';
 import * as React from 'react';
-import { Button, Form, Message, Select } from 'semantic-ui-react';
+import { Button, Form, Input, Message, Select } from 'semantic-ui-react';
 
 /* tslint:disable */
 const options = [
@@ -29,12 +29,27 @@ const storeOptions = [
     },
 ];
 
+function setApprover (name: string, value: string, prevState: any) {
+
+    return {
+        ...prevState,
+        approver: {
+            ...prevState.approver,
+            [name]: value
+        }
+    };
+}
+
 class TestForm extends React.Component {
 
     state = {
+        approver: {}
     };
 
     handleChange = (e: any, {name, value}: { name: string, value: any }) => this.setState({[name]: value});
+    handleChangeApprover = (e: any, {name, value}: { name: string, value: any }) => this.setState(
+        (prevState) => setApprover(name, value, prevState)
+    );
 
     private validate = () => {
         const schema = require('./acq-schema-v7-def.json');
@@ -55,6 +70,31 @@ class TestForm extends React.Component {
         }
     };
 
+    private validatePartial = () => {
+        const schema = require('./acq-schema-v7-partial.json');
+        console.log("====== Submit Partial =======");
+        console.log({schema});
+        console.log({state: this.state});
+
+        const ajv = new Ajv({
+            allErrors: true,
+            verbose: true,
+            jsonPointers: true,
+        }); // options can be passed, e.g. {allErrors: true}
+
+        // this should be executed only once
+        ajv.addSchema(schema); // schema should have $id or id attribute, say "schema.json#"
+
+        // every time you validate
+        const schemaUri = 'mySchema#/properties/approver';
+        const validate = ajv.getSchema(schemaUri); // you can keep them in the map, to avoid getSchema call too
+        const valid = validate(this.state.approver); // errors are in validate.errors
+
+        if (!valid) {
+            console.log({errors: validate.errors});
+        }
+    };
+
     render() {
         return (
             <Form>
@@ -64,8 +104,17 @@ class TestForm extends React.Component {
                                 onChange={this.handleChange}/>
                     <Form.Field control={Select} name="storeConstruction" label='Store' options={storeOptions}
                                 onChange={this.handleChange}/>
+                    <Form.Field control={Button} onClick={this.validate}>Submit</Form.Field>
                 </Form.Group>
-                <Form.Field control={Button} onClick={this.validate}>Submit</Form.Field>
+                <Message>No errors for internalRepresentative1</Message>
+                <Form.Group widths='equal'>
+                    <Form.Field control={Input} name="email" label='Email'
+                                onChange={this.handleChangeApprover}/>
+                    <Form.Field control={Input} name="language" label='Language'
+                                onChange={this.handleChangeApprover}/>
+
+                    <Form.Field control={Button} onClick={this.validatePartial}>Submit Partial</Form.Field>
+                </Form.Group>
             </Form>
         );
     }
