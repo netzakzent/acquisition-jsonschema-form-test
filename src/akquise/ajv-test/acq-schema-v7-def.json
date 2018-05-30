@@ -1,0 +1,90 @@
+{
+    "$schema": "http:\/\/json-schema.org\/draft-07\/schema#",
+    "title": "Coop Negotiation",
+    "description": "Coop negotiation between SR and customer",
+    "type": "object",
+    "definitions": {
+        "coop1Condition": {
+            "properties": {
+                "coop": {
+                    "type": "object",
+                    "properties": {
+                        "newType": {
+                            "const": "1"
+                        }
+                    }
+                }
+            }
+        },
+        "coop1": {
+            "type": "object",
+            "properties": {
+                "newType": {
+                    "type": "string",
+                    "const": "1"
+                },
+                "storeConstruction": {
+                    "enum": [
+                        false
+                    ]
+                }
+            },
+            "additionalItems": false
+        },
+        "coop2Condition": {
+            "properties": {
+                "coop": {
+                    "type": "object",
+                    "properties": {
+                        "newType": {
+                            "const": "2"
+                        }
+                    }
+                }
+            }
+        },
+        "coop2": {
+            "type": "object",
+            "properties": {
+                "newType": {
+                    "type": "string",
+                    "const": "2"
+                },
+                "storeConstruction": {
+                    "enum": [
+                        true
+                    ]
+                }
+            },
+            "additionalItems": false
+        }
+    },
+    "properties": {
+        "coop": {
+            "oneOf": [
+                {
+                    "if": {
+                        "$ref": "#/definitions/coop1Condition"
+                    },
+                    "then": {
+                        "$ref": "#/definitions/coop1"
+                    },
+                    "else": false
+                },
+                {
+                    "if": {
+                        "$ref": "#/definitions/coop2Condition"
+                    },
+                    "then": {
+                        "$ref": "#/definitions/coop2"
+                    },
+                    "else": false
+                }
+            ]
+        }
+    },
+    "required": [
+        "coop"
+    ],
+    "additionalProperties": false
+}

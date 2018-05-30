@@ -1,0 +1,62 @@
+{
+    "$schema": "http:\/\/json-schema.org\/draft-07\/schema#",
+    "title": "Coop Negotiation",
+    "description": "Coop negotiation between SR and customer",
+    "type": "object",
+    "$id": "mySchema",
+    "properties": {
+        "approver": {
+            "type": "object",
+            "properties": {
+                "email": {
+                    "type": "string",
+                    "format": "email"
+                },
+                "language": {
+                    "type": "string",
+                    "minLength": 2,
+                    "maxLength": 2
+                }
+            },
+            "required": [
+                "email",
+                "language"
+            ],
+            "additionalProperties": false
+        },
+        "internalRepresentative1": {
+            "type": "object",
+            "properties": {
+                "email": {
+                    "type": "string",
+                    "format": "email"
+                },
+                "language": {
+                    "type": "string",
+                    "minLength": 2,
+                    "maxLength": 2
+                },
+                "first_name": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "last_name": {
+                    "type": "string",
+                    "minLength": 1
+                }
+            },
+            "required": [
+                "email",
+                "first_name",
+                "last_name",
+                "language"
+            ],
+            "additionalProperties": false
+        }
+    },
+    "required": [
+        "approver",
+        "internalRepresentative1"
+    ],
+    "additionalProperties": false
+}

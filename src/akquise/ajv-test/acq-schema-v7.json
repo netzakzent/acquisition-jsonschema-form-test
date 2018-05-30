@@ -1,0 +1,84 @@
+{
+    "$schema": "http:\/\/json-schema.org\/draft-07\/schema#",
+    "title": "Coop Negotiation",
+    "description": "Coop negotiation between SR and customer",
+    "type": "object",
+    "properties": {
+        "coop": {
+            "oneOf": [
+                {
+                    "if": {
+                        "properties": {
+                            "coop": {
+                                "type": "object",
+                                "properties": {
+                                    "newType": {
+                                        "const": "1"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "then": {
+                        "type": "object",
+                        "properties": {
+                            "newType": {
+                                "type": "string",
+                                "const": "1"
+                            },
+                            "storeConstruction": {
+                                "enum": [
+                                    false
+                                ]
+                            }
+                        },
+                        "required": [
+                            "newType",
+                            "storeConstruction"
+                        ],
+                        "additionalProperties": false
+                    },
+                    "else": false
+                },
+                {
+                    "if": {
+                        "properties": {
+                            "coop": {
+                                "type": "object",
+                                "properties": {
+                                    "newType": {
+                                        "const": "2"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "then": {
+                        "type": "object",
+                        "properties": {
+                            "newType": {
+                                "type": "string",
+                                "const": "2"
+                            },
+                            "storeConstruction": {
+                                "enum": [
+                                    true
+                                ]
+                            }
+                        },
+                        "required": [
+                            "newType",
+                            "storeConstruction"
+                        ],
+                        "additionalProperties": false
+                    },
+                    "else": false
+                }
+            ]
+        }
+    },
+    "required": [
+        "coop"
+    ],
+    "additionalProperties": false
+}
